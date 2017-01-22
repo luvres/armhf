@@ -58,6 +58,28 @@ cd arm
 
 docker build -t izone/arm:tomcat ./tomcat/
 ```
+
+### Postgres 9.5.5
+##### Pull image
+```
+docker pull izone/arm:postgres
+```
+
+##### Run pulled image
+```
+docker run --name Postgre -h postgres \
+-p 5432:5432 \
+-e POSTGRES_PASSWORD=postgres \
+-d izone/arm:postgres
+
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm:postgres ./postgres/
+```
 -----
 
 ### Debian jessie
