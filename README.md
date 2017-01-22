@@ -42,6 +42,20 @@ docker run --rm --name Debian -ti izone/arm:openjdk java -version
 docker build -t izone/arm:openjdk ./openjdk/
 ```
 
+### Openjdk 8 with Alpine
+##### Pull image
+```
+docker pull izone/arm:openjdk-alpine
+```
+##### Run pulled image
+```
+docker run --rm --name Alpine -ti izone/arm:openjdk-alpine java -version
+```
+##### Buildin
+```
+docker build -t izone/arm:openjdk-alpine ./openjdk-alpine/
+```
+
 ### PHP 5.6 and Apache
 ##### Pull image
 ```

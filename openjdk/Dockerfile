@@ -1,5 +1,6 @@
-#FROM resin/rpi-raspbian
 FROM resin/rpi-raspbian
+#FROM izone/arm:debian
+
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
