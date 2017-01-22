@@ -80,8 +80,31 @@ cd arm
 
 docker build -t izone/arm:postgres ./postgres/
 ```
------
 
+### Lighttpd
+##### Pull image
+```
+docker pull izone/arm:lighttpd
+```
+##### Run pulled image
+```
+mkdir $HOME/www
+
+docker run --rm --name Lighttpd -h lighttpd \
+-p 80:80 \
+-v $HOME/www:/var/www \
+-ti izone/arm:lighttpd
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm:lighttpd ./lighttpd/
+```
+
+
+-----
 ### Debian jessie
 ##### Pull image
 ```
