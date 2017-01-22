@@ -105,3 +105,28 @@ cd arm
 
 docker build -t izone/arm:php71 ./php71/
 ```
+
+### Tomcat 8.0.39
+##### Pull image
+```
+docker pull izone/arm:tomcat-alpine
+```
+##### Run pulled image
+```
+docker run --rm --name Tomcat -h tomcat \
+-e PASS="admin" \
+-p 8008:8080 \
+-ti izone/arm:tomcat-alpine
+
+docker run -name Tomcat -h tomcat \
+-e PASS="admin" \
+-p 8008:8080 \
+-d izone/arm:tomcat-alpine
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm:tomcat-alpine ./tomcat-alpine/
+```
