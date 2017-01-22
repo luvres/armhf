@@ -1,5 +1,23 @@
 ## ARMv7 - Build in RaspberryPi 2
 
+### Latest image (Alpine Linux)
+##### Pull image
+```
+docker pull izone/arm
+```
+##### Run pulled image
+```
+docker run --rm --name Alpine -ti izone/arm ash
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm .
+```
+
+
 ### Debian jessie
 ##### Pull image
 ```
@@ -15,23 +33,6 @@ git clone https://github.com/luvres/arm.git
 cd arm
 
 docker build -t izone/arm:debian ./debian/
-```
-
-### Alpine Linux
-##### Pull image
-```
-docker pull izone/arm:alpine
-```
-##### Run pulled image
-```
-docker run --rm --name Alpine -ti izone/arm:alpine ash
-```
-##### Buildin
-```
-git clone https://github.com/luvres/arm.git
-cd arm
-
-docker build -t izone/arm:alpine ./alpine/
 ```
 
 ### Openjdk 8 with Debian base

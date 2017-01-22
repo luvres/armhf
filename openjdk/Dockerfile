@@ -1,4 +1,4 @@
-FROM izone/arm:alpine
+FROM izone/arm
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
 # Default to UTF-8 file.encoding

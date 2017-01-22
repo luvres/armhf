@@ -1,4 +1,4 @@
-FROM izone/arm:openjdk-alpine
+FROM izone/arm:openjdk
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
 ENV CATALINA_HOME=/usr/local/tomcat \
@@ -7,9 +7,9 @@ ENV CATALINA_HOME=/usr/local/tomcat \
     TOMCAT_VERSION=8.0.39 \
     TOMCAT_TGZ_URL=http://mirror.nbtelecom.com.br/apache/tomcat/tomcat-8/v8.0.39/bin/apache-tomcat-8.0.39.zip
 
-RUN apk update \
-    && apk upgrade \
-    && apk add wget \
+#RUN apk update \
+#    && apk upgrade \
+RUN apk add --no-cache wget \
     && wget $TOMCAT_TGZ_URL \
     && unzip apache-tomcat-$TOMCAT_VERSION.zip \
     && mv apache-tomcat-$TOMCAT_VERSION /usr/local/tomcat \
