@@ -11,6 +11,9 @@ docker run --rm --name Debian -ti izone/arm:debian bash
 ```
 ##### Buildin
 ```
+git clone https://github.com/luvres/arm.git
+cd arm
+
 docker build -t izone/arm:debian ./debian/
 ```
 
@@ -25,6 +28,9 @@ docker run --rm --name Alpine -ti izone/arm:alpine ash
 ```
 ##### Buildin
 ```
+git clone https://github.com/luvres/arm.git
+cd arm
+
 docker build -t izone/arm:alpine ./alpine/
 ```
 
@@ -39,6 +45,9 @@ docker run --rm --name Debian -ti izone/arm:openjdk java -version
 ```
 ##### Buildin
 ```
+git clone https://github.com/luvres/arm.git
+cd arm
+
 docker build -t izone/arm:openjdk ./openjdk/
 ```
 
@@ -53,6 +62,9 @@ docker run --rm --name Alpine -ti izone/arm:openjdk-alpine java -version
 ```
 ##### Buildin
 ```
+git clone https://github.com/luvres/arm.git
+cd arm
+
 docker build -t izone/arm:openjdk-alpine ./openjdk-alpine/
 ```
 
@@ -69,6 +81,9 @@ docker run --rm --name Php -h php -p 80:80 -v $HOME/www:/var/www/html izone/arm:
 ```
 ##### Buildin
 ```
+git clone https://github.com/luvres/arm.git
+cd arm
+
 docker build -t izone/arm:php56 ./php56/
 ```
 
@@ -85,5 +100,8 @@ docker run --rm --name Php -h php -p 80:80 -v $HOME/www:/var/www/html izone/arm:
 ```
 ##### Buildin
 ```
+git clone https://github.com/luvres/arm.git
+cd arm
+
 docker build -t izone/arm:php71 ./php71/
 ```
