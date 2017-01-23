@@ -50,6 +50,12 @@ docker run -name Tomcat -h tomcat \
 -e PASS="admin" \
 -p 8080:8080 \
 -d izone/arm:tomcat
+
+docker run -name Tomcat -h tomcat \
+--link MariaDB:mariadb-host \
+-e PASS="admin" \
+-p 8080:8080 \
+-d izone/arm:tomcat
 ```
 ##### Buildin
 ```
@@ -138,6 +144,12 @@ docker pull izone/arm:php
 mkdir $HOME/www
 
 docker run --rm --name Lighttpd -h lighttpd \
+-p 80:80 \
+-v $HOME/www:/var/www \
+-ti izone/arm:php
+
+docker run --rm --name Lighttpd -h lighttpd \
+--link MariaDB:mariadb-host \
 -p 80:80 \
 -v $HOME/www:/var/www \
 -ti izone/arm:php
