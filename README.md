@@ -81,6 +81,10 @@ docker run --name MariaDB -h mariadb \
 -p 3306:3306 \
 -e MYSQL_ROOT_PASSWORD=maria \
 -d izone/arm:mariadb
+
+docker logs -f MariaDB
+
+docker exec -ti MariaDB mysql -u root -pmaria
 ```
 ##### Buildin
 ```
