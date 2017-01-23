@@ -85,6 +85,18 @@ docker run --name MariaDB -h mariadb \
 docker logs -f MariaDB
 
 docker exec -ti MariaDB mysql -u root -pmaria
+
+CREATE DATABASE dbzone;
+CREATE USER 'luvres'@'%' IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES ON dbzone.* TO 'luvres'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+-- -------------
+DROP USER luvres;
+mysql --user=luvres --password=p4sS dbzone
+mysql -u luvres -pp4sS dbzone
+select user, host from mysql.user;
+SHOW GRANTS FOR usuario;
+select user();
 ```
 ##### Buildin
 ```
