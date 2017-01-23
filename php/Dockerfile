@@ -32,4 +32,4 @@ VOLUME /var/www
 
 EXPOSE 80
 
-CMD php-fpm -D && lighttpd -D -f /etc/lighttpd/lighttpd.conf
+CMD [ "php-fpm", "-D", "&&", "lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf" ]
