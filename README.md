@@ -103,7 +103,7 @@ cd arm
 docker build -t izone/arm:lighttpd ./lighttpd/
 ```
 
-### Lighttpd and PHP 5.6
+### PHP 5.6 and Lighttpd
 ##### Pull image
 ```
 docker pull izone/arm:php
