@@ -103,6 +103,27 @@ cd arm
 docker build -t izone/arm:lighttpd ./lighttpd/
 ```
 
+### Lighttpd and PHP 5.6
+##### Pull image
+```
+docker pull izone/arm:php
+```
+##### Run pulled image
+```
+mkdir $HOME/www
+
+docker run --rm --name Lighttpd -h lighttpd \
+-p 80:80 \
+-v $HOME/www:/var/www \
+-ti izone/arm:php
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm:php ./php/
+```
 
 -----
 ### Debian jessie
