@@ -59,6 +59,31 @@ cd arm
 docker build -t izone/arm:tomcat ./tomcat/
 ```
 
+### MySQL (MariaDB)
+##### Pull image
+```
+docker pull izone/arm:mariadb
+```
+##### Run pulled image
+```
+docker run --rm --name MariaDB -h mariadb \
+-p 3306:3306 \
+-e MYSQL_ROOT_PASSWORD=maria \
+-ti izone/arm:mariadb
+
+docker run --name MariaDB -h mariadb \
+-p 3306:3306 \
+-e MYSQL_ROOT_PASSWORD=maria \
+-d izone/arm:mariadb
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm:mariadb ./mariadb/
+```
+
 ### Postgres 9.5.5
 ##### Pull image
 ```
