@@ -247,3 +247,11 @@ cd arm
 docker build -t izone/arm:php56 ./debian/php56/
 ```
 
+-----
+### AUTO CONSTRUCTION creation sequence
+```
+docker build -t izone/arm . && \
+docker build -t izone/arm:lighttpd ./lighttpd/ && \
+docker build -t izone/arm:php ./php/ && \
+docker build -t izone/arm:owncloud ./owncloud/
+```
