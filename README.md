@@ -142,6 +142,10 @@ docker run --rm --name Lighttpd -h lighttpd \
 -v $HOME/www:/var/www \
 -ti izone/arm:lighttpd
 ```
+##### Browser access
+```
+http://localhost/
+```
 ##### Buildin
 ```
 git clone https://github.com/luvres/arm.git
@@ -170,6 +174,10 @@ docker run --rm --name Php -h php \
 -v $HOME/www:/var/www \
 -ti izone/arm:php
 ```
+##### Browser access
+```
+http://localhost/
+```
 ##### Buildin
 ```
 git clone https://github.com/luvres/arm.git
@@ -188,8 +196,10 @@ docker pull izone/arm:owncloud
 docker run --rm --name Owncloud -h ounclowd \
 -p 80:80 \
 -ti izone/arm:owncloud
-
-http://localhost
+```
+##### Browser access
+```
+http://localhost/
 ```
 ##### Buildin
 ```
