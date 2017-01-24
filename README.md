@@ -178,6 +178,28 @@ cd arm
 docker build -t izone/arm:php ./php/
 ```
 
+### Owncloud
+##### Pull image
+```
+docker pull izone/arm:owncloud
+```
+##### Run pulled image
+```
+docker run --rm --name Owncloud -h ounclowd \
+-p 80:80 \
+-ti izone/arm:owncloud
+
+http://localhost
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm:owncloud ./owncloud/
+```
+
+
 -----
 ### Debian jessie
 ##### Pull image
