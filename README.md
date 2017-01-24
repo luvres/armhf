@@ -159,12 +159,12 @@ docker pull izone/arm:php
 ```
 mkdir $HOME/www
 
-docker run --rm --name Lighttpd -h lighttpd \
+docker run --rm --name Php -h php \
 -p 80:80 \
 -v $HOME/www:/var/www \
 -ti izone/arm:php
 
-docker run --rm --name Lighttpd -h lighttpd \
+docker run --rm --name Php -h php \
 --link MariaDB:mariadb-host \
 -p 80:80 \
 -v $HOME/www:/var/www \
