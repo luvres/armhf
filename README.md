@@ -306,7 +306,7 @@ docker build -t izone/arm:php56 ./debian/php56/
 
 
 -----
-### AUTO CONSTRUCTION creation sequence
+### AUTO CONSTRUCTION creation sequences
 #### Base
 ```
 docker build -t izone/arm .
