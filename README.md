@@ -82,7 +82,7 @@ cd arm
 docker build -t izone/arm:tomcat ./tomcat/
 ```
 
-### Windfly 10.1.0
+### Windfly 10.1.0 Final
 ###Pull image
 ```
 docker pull izone/arm:wildfly
