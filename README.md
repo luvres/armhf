@@ -294,7 +294,10 @@ docker pull izone/arm:php56
 ```
 mkdir $HOME/www
 
-docker run --rm --name Php -h php -p 80:80 -v $HOME/www:/var/www/html izone/arm:php56
+docker run --rm --name Php -h php \
+-p 80:80 \
+-v $HOME/www:/var/www/html \
+izone/arm:php56
 ```
 ##### Buildin
 ```
@@ -307,7 +310,7 @@ docker build -t izone/arm:php56 ./debian/php56/
 
 -----
 ### AUTO CONSTRUCTION creation sequences
-#### Base
+#### Base (Alpine)
 ```
 docker build -t izone/arm .
 ```
