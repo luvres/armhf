@@ -288,7 +288,7 @@ docker build -t izone/arm:debian ./debian/
 ### PHP 5.6 and Apache
 ##### Pull image
 ```
-docker pull izone/arm:php56
+docker pull izone/arm:php56-apache
 ```
 ##### Run pulled image
 ```
@@ -297,14 +297,14 @@ mkdir $HOME/www
 docker run --rm --name Php -h php \
 -p 80:80 \
 -v $HOME/www:/var/www/html \
-izone/arm:php56
+izone/arm:php56-apache
 ```
 ##### Buildin
 ```
 git clone https://github.com/luvres/arm.git
 cd arm
 
-docker build -t izone/arm:php56 ./debian/php56/
+docker build -t izone/arm:php56-apache ./debian/php56/
 ```
 
 

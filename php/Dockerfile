@@ -23,7 +23,6 @@ RUN apk add --no-cache \
     php5-ctype \
     php5-dom \
     php5-mysqli \
-    && rm -rf /var/cache/apk/* \
     && mkdir -p /run/lighttpd/ \
     && chown www-data. /run/lighttpd/
 
