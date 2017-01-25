@@ -297,5 +297,10 @@ docker build -t izone/arm:owncloud ./owncloud/
 ### Web Servers Java
 ```
 docker build -t izone/arm:openjdk ./openjdk/ && \
-docker build -t izone/arm:tomcat ./tomcat/
+docker build -t izone/arm:tomcat ./tomcat/ && \
+docker build -t izone/arm:wildfly ./wildfly/
+
+docker build -t izone/arm:wildfly8 ./wildfly/8.2.1.Final/
+
+docker build -t izone/arm:openjdk7 ./openjdk/openjdk7/ && \
 ```

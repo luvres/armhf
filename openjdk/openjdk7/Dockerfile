@@ -13,10 +13,10 @@ RUN { \
 		echo 'dirname "$(dirname "$(readlink -f "$(which javac || which java)")")"'; \
 	} > /usr/local/bin/docker-java-home \
 	&& chmod +x /usr/local/bin/docker-java-home
-ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
-ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
+ENV JAVA_HOME /usr/lib/jvm/java-1.7-openjdk
+ENV PATH $PATH:/usr/lib/jvm/java-1.7-openjdk/jre/bin:/usr/lib/jvm/java-1.7-openjdk/bin
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
     && apk add --no-cache \
     curl \
-    openjdk8-jre-base
+    openjdk7-jre-base
