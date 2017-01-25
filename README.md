@@ -307,22 +307,22 @@ docker build -t izone/arm:php56 ./debian/php56/
 
 -----
 ### AUTO CONSTRUCTION creation sequence
-##### Base
+#### Base
 ```
 docker build -t izone/arm .
 ```
-### Databases
+#### Databases
 ```
 docker build -t izone/arm:mariadb ./mariadb/ && \
 docker build -t izone/arm:postgres ./postgres/
 ```
-### Web Servers
+#### Web Servers
 ```
 docker build -t izone/arm:lighttpd ./lighttpd/ && \
 docker build -t izone/arm:php ./php/ && \
 docker build -t izone/arm:owncloud ./owncloud/
 ```
-### Web Servers Java
+#### Web Servers Java
 ```
 docker build -t izone/arm:openjdk ./openjdk/ && \
 docker build -t izone/arm:tomcat ./tomcat/ && \
