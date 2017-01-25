@@ -4,11 +4,9 @@ MAINTAINER Leonardo Loures <luvres@hotmail.com>
 ENV CATALINA_HOME=/usr/local/tomcat \
     PATH=$CATALINA_HOME/bin:$PATH \
     TOMCAT_MAJOR=8 \
-    TOMCAT_VERSION=8.0.39 \
-    TOMCAT_TGZ_URL=http://mirror.nbtelecom.com.br/apache/tomcat/tomcat-8/v8.0.39/bin/apache-tomcat-8.0.39.zip
+    TOMCAT_VERSION=8.0.41
+ENV TOMCAT_TGZ_URL=http://ftp.unicamp.br/pub/apache/tomcat/tomcat-8/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.zip
 
-#RUN apk update \
-#    && apk upgrade \
 RUN apk add --no-cache wget \
     && wget $TOMCAT_TGZ_URL \
     && unzip apache-tomcat-$TOMCAT_VERSION.zip \

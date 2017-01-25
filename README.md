@@ -51,7 +51,7 @@ cd arm
 docker build -t izone/arm:openjdk ./openjdk/
 ```
 
-### Tomcat 8.0.39
+### Tomcat 8.0.41
 ##### Pull image
 ```
 docker pull izone/arm:tomcat
