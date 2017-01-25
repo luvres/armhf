@@ -9,6 +9,7 @@ ENV TOMCAT_TGZ_URL=http://ftp.unicamp.br/pub/apache/tomcat/tomcat-8/v$TOMCAT_VER
 
 RUN apk add --no-cache wget \
     && wget $TOMCAT_TGZ_URL \
+    && apk del wget \
     && unzip apache-tomcat-$TOMCAT_VERSION.zip \
     && mv apache-tomcat-$TOMCAT_VERSION /usr/local/tomcat \
     && chmod +x /usr/local/tomcat/bin/*.sh \
