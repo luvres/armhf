@@ -114,11 +114,23 @@ docker pull izone/arm:postgres
 
 ##### Run pulled image
 ```
-docker run --name Postgre -h postgres \
+docker run --name Postgres -h postgres \
 -p 5432:5432 \
 -e POSTGRES_PASSWORD=postgres \
 -d izone/arm:postgres
 
+docker logs -f Postgres
+
+docker exec -ti PostgreSQL bash -c "su postgres"
+
+createdb dbzone
+psql -U postgres
+create user luvres with password 'aamu02';
+alter database dbzone owner to luvres;
+---------------
+alter user luvres password 'aamu02';
+drop user luvres;
+\du
 ```
 ##### Buildin
 ```
