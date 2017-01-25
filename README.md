@@ -82,6 +82,34 @@ cd arm
 docker build -t izone/arm:tomcat ./tomcat/
 ```
 
+### Windfly 10.1.0
+###Pull image
+```
+docker pull izone/arm:wildfly
+```
+#### Run pulled image
+```
+docker run --rm --name Wildfly -h wildfly \
+-e PASS="admin" \
+-p 8080:8080 \
+-p 9990:9990 \
+-ti izone/arm:wildfly
+
+docker run --name Wildfly -h wildfly \
+--link MariaDB:mariadb-host \
+-e PASS="admin" \
+-p 8080:8080 \
+-p 9990:9990 \
+-d izone/arm:wildfly
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm:wildfly ./wildfly/
+```
+
 ### MySQL (MariaDB)
 ##### Pull image
 ```
