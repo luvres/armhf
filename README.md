@@ -125,10 +125,10 @@ docker exec -ti Postgres bash -c "su postgres"
 
 createdb dbzone
 psql -U postgres
-create user luvres with password 'aamu02';
+create user luvres with password 'pass';
 alter database dbzone owner to luvres;
 ---------------
-alter user luvres password 'aamu02';
+alter user luvres password 'p4sS';
 drop user luvres;
 \du
 ```
