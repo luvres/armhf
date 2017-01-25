@@ -121,7 +121,7 @@ docker run --name Postgres -h postgres \
 
 docker logs -f Postgres
 
-docker exec -ti PostgreSQL bash -c "su postgres"
+docker exec -ti Postgres bash -c "su postgres"
 
 createdb dbzone
 psql -U postgres
