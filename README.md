@@ -87,7 +87,7 @@ docker build -t izone/arm:tomcat ./tomcat/
 ```
 docker pull izone/arm:wildfly
 ```
-#### Run pulled image
+##### Run pulled image
 ```
 docker run --rm --name Wildfly -h wildfly \
 -e PASS="admin" \
