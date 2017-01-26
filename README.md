@@ -35,6 +35,10 @@ docker run --name Php -h php \
 -v $HOME/www:/var/www \
 -d izone/arm:php
 ```
+##### Browser access
+```
+http://localhost/
+```
 
 ### Openjdk 8
 ##### Pull image
