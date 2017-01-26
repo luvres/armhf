@@ -18,7 +18,7 @@ docker build -t izone/arm .
 ```
 
 ### LLMP stack (Linux, Lighttpd, MariaDB, PHP5)
-##### MaridDB 10.1
+##### MariaDB 10.1
 ```
 docker run --name MariaDB -h mariadb \
 -p 3306:3306 \
@@ -27,6 +27,8 @@ docker run --name MariaDB -h mariadb \
 ```
 ##### PHP 5.6 and Lighttpd
 ```
+mkdir $HOME/www
+
 docker run --name Php -h php \
 --link MariaDB:mariadb-host \
 -p 80:80 \
