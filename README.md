@@ -17,7 +17,7 @@ cd arm
 docker build -t izone/arm .
 ```
 
-### LLMP stack (Linux, Lighttpd, MariaDB, PHP5)
+### ALMPP stack (Alpine, Lighttpd, MariaDB, Postgres, PHP5)
 ##### MariaDB 10.1
 ```
 docker run --name MariaDB -h mariadb \
@@ -39,7 +39,29 @@ docker run --name Php -h php \
 ```
 http://localhost/
 ```
+### phpMyAdmin
+##### Usage with linked server
+```
+docker run --rm --name Myadmin -h phpmyadmin \
+--link MariaDB:db \
+-p 8080:80 \
+-ti izone/arm:phpmyadmin
+```
+##### Usage with external server
+```
+docker run --rm --name Myadmin -h phpmyadmin \
+-e PMA_HOST=191.96.255.100 \
+-p 8080:80 \
+-ti izone/arm:phpmyadmin
+```
+##### Browser access
+```
+http://localhost:8080/
+```
+##### Official phpMyAdmin Docker image
+##### https://github.com/phpmyadmin/docker
 
+-----
 ### Openjdk 8
 ##### Pull image
 ```
@@ -47,7 +69,8 @@ docker pull izone/arm:openjdk
 ```
 ##### Run pulled image
 ```
-docker run --rm --name OpenJDK -ti izone/arm:openjdk java -version
+docker run --rm --name OpenJDK \
+-ti izone/arm:openjdk java -version
 ```
 ##### Buildin
 ```
