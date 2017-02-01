@@ -4,8 +4,8 @@ MAINTAINER Leonardo Loures <luvres@hotmail.com>
 # Default to UTF-8 file.encoding
 ENV LANG=C.UTF-8 \
     JAVA_VERSION_MINOR=8 \
-    JAVA_VERSION=1.8 \
-    JAVA_HOME=/usr/lib/jvm/java-${JAVA_VERSION}-openjdk \
+    JAVA_VERSION=1.8
+ENV JAVA_HOME=/usr/lib/jvm/java-${JAVA_VERSION}-openjdk \
     PATH=$PATH:/usr/lib/jvm/java-${JAVA_VERSION}-openjdk/jre/bin:/usr/lib/jvm/java-${JAVA_VERSION}-openjdk/bin
 
 # add a simple script that can auto-detect the appropriate JAVA_HOME value
