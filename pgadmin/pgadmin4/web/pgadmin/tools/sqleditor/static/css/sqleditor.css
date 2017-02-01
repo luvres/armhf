@@ -1,0 +1,422 @@
+#main-editor_panel {
+  height: 100%;
+  width: 100%;
+}
+
+.sql-editor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top : 0;
+  bottom: 0;
+}
+
+.sql-editor-busy-fetching {
+  position:absolute;
+  left: 0;
+  top: 41px;
+  bottom: 0;
+  right: 0;
+  margin:0;
+  padding: 0;
+  background: black;
+  opacity: 0.6;
+  z-index: 100;
+}
+
+#editor-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top : 65px;
+  bottom: 0;
+  z-index: 0;
+}
+
+.editor-title {
+  background-color: #2C76B4;
+  padding: 4px 5px;
+  color: white;
+  font-size: 13px;
+}
+
+.sql-editor-grid-container {
+  height: 100%;
+  overflow: auto;
+}
+
+.sql-editor-grid-container.has-no-footer {
+  height: 100%;
+}
+
+.filter-container {
+  position: relative;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0.5px 0.5px 5px #000;
+  padding-bottom: 30px;
+  top: 10px;
+  z-index: 1;
+  margin: auto;
+  width: 60%;
+}
+
+.filter-container .CodeMirror-scroll {
+  min-height: 120px;
+}
+
+.filter-container .sql-textarea{
+  box-shadow: 0.1px 0.1px 3px #000;
+  margin-bottom: 5px;
+}
+
+.filter-title {
+  background-color: #2C76B4;
+  padding: 2px;
+  color: white;
+  font-size: 13px;
+}
+
+#filter .btn-group {
+  margin-right: 2px;
+  float: right;
+}
+
+#filter .btn-group > button {
+  padding: 3px;
+}
+
+#filter .btn-group .btn-primary {
+  margin: auto !important;
+}
+
+.has-select-all table thead tr th:nth-child(1),
+.has-select-all table tbody tr td:nth-child(1) {
+  width: 35px !important;
+  max-width: 35px !important;
+  min-width: 35px !important;
+}
+
+.sql-editor-message {
+  white-space:pre-wrap;
+  font-family: monospace;
+  padding-top: 5px;
+  padding-left: 10px;
+  overflow: auto;
+  height: 100%;
+  font-size: 0.925em;
+}
+
+.limit-enabled {
+  background-color: white;
+}
+
+.sql-editor-history-container {
+  height: 100%;
+  overflow: auto;
+}
+
+.sql-status-cell {
+  max-width: 30px;
+}
+
+.btn-circle {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 0;
+  font-size: 10px;
+  line-height: 1.428571429;
+  border-radius: 10px;
+  cursor: auto;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.sql-editor-mark {
+  border-bottom: 2px dotted red;
+}
+
+#editor-panel .CodeMirror-activeline-background {
+  background: #D9EDF7;
+}
+
+.CodeMirror-foldmarker {
+  color: blue;
+  text-shadow: #b9f 1px 1px 2px, #b9f -1px -1px 2px, #b9f 1px -1px 2px, #b9f -1px 1px 2px;
+  font-family: arial;
+  line-height: .3;
+  cursor: pointer;
+}
+
+.CodeMirror, #editor-panel .CodeMirror-gutters {
+    min-height: 100%;
+}
+
+/* Changes specific to output panel of query tool */
+#output-panel, #output-panel .CodeMirror, #output-panel .CodeMirror-gutters {
+  height: 100% !important;
+}
+
+#output-panel .CodeMirror-gutter-wrapper {
+  width: 43px;
+  height: 22px;
+  border-right: 1px solid #ddd !important;
+  background: #f7f7f7 !important;
+}
+
+.CodeMirror-foldgutter {
+  width: .9em;
+}
+
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
+  cursor: pointer;
+}
+
+.CodeMirror-foldgutter-open:after {
+  content: "\25BC";
+}
+
+.CodeMirror-foldgutter-folded:after {
+  content: "\25B6";
+}
+
+
+.sql-editor-explain {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.CodeMirror-hints {
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  list-style: none;
+
+  margin: 0;
+  padding: 2px;
+
+  -webkit-box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+  -moz-box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+  box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+  border-radius: 3px;
+  border: 1px solid silver;
+
+  background: white;
+  font-size: 90%;
+  font-family: monospace;
+
+  max-height: 20em;
+  overflow-y: auto;
+}
+
+.CodeMirror-hint {
+  margin: 0;
+  padding: 0 4px;
+  border-radius: 2px;
+  max-width: 19em;
+  overflow: hidden;
+  white-space: pre;
+  color: black;
+  cursor: pointer;
+}
+
+li.CodeMirror-hint-active {
+  background: #08f;
+  color: white;
+}
+
+.sqleditor-hint {
+  padding-left: 20px;
+}
+
+.CodeMirror-hint .fa::before {
+  padding-right: 7px;
+}
+
+h2 {
+  font-size: 10pt;
+  border-bottom: 1px dotted gray;
+}
+
+ul {
+  margin-left: 0;
+  padding: 0;
+  cursor: default;
+}
+
+li {
+  padding: 0 0 0 0px;
+  list-style: none;
+  margin: 0;
+}
+
+#datagrid {
+  background: white;
+  outline: 0;
+  border: 1px solid gray;
+  font-size: 9pt;
+}
+
+.slick-header-column.ui-state-default {
+    height: 40px !important;
+}
+
+#datagrid .grid-header label {
+  display: inline-block;
+  font-weight: bold;
+  margin: auto auto auto 6px;
+}
+
+.grid-header .ui-icon {
+  margin: 4px 4px auto 6px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.grid-header .ui-icon.ui-state-hover {
+  background-color: white;
+}
+
+.slick-cell.cell-move-handle {
+  font-weight: bold;
+  text-align: right;
+  border-right: solid gray;
+  background: #efefef;
+  cursor: move;
+}
+
+.cell-move-handle:hover {
+  background: #b6b9bd;
+}
+
+.slick-row.selected .cell-move-handle {
+  background: #D5DC8D;
+}
+
+.slick-row .cell-actions {
+  text-align: left;
+}
+
+.slick-row.complete {
+  background-color: #DFD;
+  color: #555;
+}
+
+/* Slick.Editors.Text, Slick.Editors.Date */
+#datagrid .slick-header > input.editor-text {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  outline: 0;
+  padding: 0;
+}
+
+/* Slick.Editors.Checkbox */
+#datagrid .slick-header > input.editor-checkbox {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+}
+
+.cell-selection {
+  border-right-color: silver;
+  border-right-style: solid;
+  background: #f5f5f5;
+  color: gray;
+  text-align: right;
+  font-size: 10px;
+}
+
+.slick-row.selected .cell-selection {
+  background-color: transparent; /* show default selected row background */
+}
+
+.slick-cell-checkboxsel {
+  background: #f0f0f0;
+  border-right-color: silver;
+  border-right-style: solid;
+}
+
+#datagrid .slick-header .ui-state-default,
+#datagrid .slick-header .ui-widget-content.ui-state-default,
+#datagrid .slick-header .ui-widget-header .ui-state-default {
+  background: none;
+}
+
+#datagrid .slick-header .slick-header-columns {
+  background: #2c76b4;
+  height: 40px;
+}
+
+#datagrid .slick-header .slick-header-column.ui-state-default {
+ color: #fff;
+ padding: 4px 6px;
+}
+
+.long_text_editor {
+  margin-left: 5px;
+  font-size: 12px !important;
+  padding: 1px 7px;
+}
+
+/* Slick.Editors.Text, Slick.Editors.Date */
+input.editor-text {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  outline: 0;
+  padding: 0;
+}
+
+/* Slick.Editors.Text, Slick.Editors.Date */
+textarea.editor-text {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  outline: 0;
+  padding: 0;
+}
+
+/* Slick.Editors.Checkbox */
+input.editor-checkbox {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+}
+
+/* Override selected row color */
+.slick-cell.selected {
+    background-color: #eeeeee !important;
+}
+
+/* To highlight all newly inserted rows */
+.grid-canvas .new_row {
+  background: #f3f2d8;
+}
+
+/* To highlight all the updated rows */
+.grid-canvas .updated_row {
+  background: #c1c1c1;
+}
+
+/* To highlight row at fault */
+.grid-canvas .new_row.error, .grid-canvas .updated_row.error {
+  background: #e46b6b;
+}
+
+#datagrid div.slick-header.ui-state-default {
+  background: #2c76b4;
+}

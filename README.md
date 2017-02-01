@@ -213,6 +213,28 @@ cd arm
 
 docker build -t izone/arm:postgres ./postgres/
 ```
+### pgAdmin
+```
+docker run -ti --name PgAdmin -h pgadmin \
+--link Postgres:postgres \
+-p 5050:5050 \
+-ti izone/arm:pgadmin
+```
+##### Browser access
+```
+http://localhost:5050/
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm:pgadmin ./pgadmin/
+```
+##### References
+##### https://github.com/docker-library/python
+##### https://github.com/fenglc/dockercloud-pgAdmin4
+
 
 ### Lighttpd
 ##### Pull image
