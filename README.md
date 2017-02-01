@@ -369,7 +369,8 @@ docker build -t izone/arm .
 ```
 docker build -t izone/arm:mariadb ./mariadb/ && \
 docker build -t izone/arm:postgres ./postgres/ && \
-docekr build -t izone/arm:phpmyadmin ./phpmyadmin/
+docekr build -t izone/arm:phpmyadmin ./phpmyadmin/ && \
+docker build -t izone/arm:pgadmin ./pgadmin/
 ```
 #### Web Servers
 ```
