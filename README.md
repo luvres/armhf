@@ -35,25 +35,15 @@ docker run --name Php -h php \
 -v $HOME/www:/var/www \
 -d izone/arm:php
 ```
-### PHP 7 and Lighttpd
-##### Pull image
-```
-docker pull izone/arm:php7
-```
-##### Run pulled image
+##### PHP 7 and Lighttpd
 ```
 mkdir $HOME/www
 
-docker run --rm --name Php -h php \
--p 80:80 \
--v $HOME/www:/var/www \
--ti izone/arm:php7
-
-docker run --rm --name Php -h php \
+docker run --name Php -h php \
 --link MariaDB:mariadb-host \
 -p 80:80 \
 -v $HOME/www:/var/www \
--ti izone/arm:php7
+-d izone/arm:php
 ```
 ##### Browser access
 ```
@@ -302,6 +292,27 @@ docker run --rm --name Php -h php \
 -v $HOME/www:/var/www \
 -ti izone/arm:php
 ```
+### PHP 7 and Lighttpd
+##### Pull image
+```
+docker pull izone/arm:php7
+```
+##### Run pulled image
+```
+mkdir $HOME/www
+
+docker run --rm --name Php -h php \
+-p 80:80 \
+-v $HOME/www:/var/www \
+-ti izone/arm:php7
+
+docker run --rm --name Php -h php \
+--link MariaDB:mariadb-host \
+--link Postgres:postgres-host \
+-p 80:80 \
+-v $HOME/www:/var/www \
+-ti izone/arm:php7
+```
 ##### Browser access
 ```
 http://localhost/
@@ -312,6 +323,9 @@ git clone https://github.com/luvres/arm.git
 cd arm
 
 docker build -t izone/arm:php ./php/
+
+docker build -t izone/arm:php7 ./php7/
+
 ```
 
 ### Owncloud
