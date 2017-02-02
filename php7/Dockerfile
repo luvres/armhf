@@ -13,10 +13,10 @@ RUN apk add --no-cache \
     php7-cgi \
     fcgi \
     php7-fpm \
-    php7-pdo_mysql \
-    php7-pdo_pgsql \
     php7-pdo \
     php7-pdo_sqlite \
+    php7-pdo_mysql \
+    php7-pdo_pgsql \
     php7-soap \
     php7-xmlrpc \
     php7-posix \
