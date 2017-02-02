@@ -17,7 +17,7 @@ cd arm
 docker build -t izone/arm .
 ```
 
-### ALMPP stack (Alpine, Lighttpd, MariaDB, Postgres, PHP5)
+### ALMPP stack (Alpine, Lighttpd, MariaDB, Postgres, PHP)
 ##### MariaDB 10.1
 ```
 docker run --name MariaDB -h mariadb \
@@ -34,6 +34,26 @@ docker run --name Php -h php \
 -p 80:80 \
 -v $HOME/www:/var/www \
 -d izone/arm:php
+```
+### PHP 7 and Lighttpd
+##### Pull image
+```
+docker pull izone/arm:php7
+```
+##### Run pulled image
+```
+mkdir $HOME/www
+
+docker run --rm --name Php -h php \
+-p 80:80 \
+-v $HOME/www:/var/www \
+-ti izone/arm:php7
+
+docker run --rm --name Php -h php \
+--link MariaDB:mariadb-host \
+-p 80:80 \
+-v $HOME/www:/var/www \
+-ti izone/arm:php7
 ```
 ##### Browser access
 ```
@@ -371,12 +391,15 @@ docker build -t izone/arm:mariadb ./mariadb/ && \
 docekr build -t izone/arm:phpmyadmin ./phpmyadmin/
 
 docker build -t izone/arm:postgres ./postgres/ && \
+docker build -t izone/arm:python2 ./python2/ && \
 docker build -t izone/arm:pgadmin ./pgadmin/
 ```
 #### Web Servers
 ```
 docker build -t izone/arm:lighttpd ./lighttpd/ && \
 docker build -t izone/arm:php ./php/ && \
+docker build -t izone/arm:php7 ./php7/
+
 docker build -t izone/arm:owncloud ./owncloud/
 ```
 #### Web Servers Java
