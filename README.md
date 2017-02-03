@@ -9,7 +9,7 @@
 
 #### MySQL (MariaDB)
 #### phpMyAdmin
-#### Postgres 9.5.5
+#### Postgres (9.6.1 and 9.5.5)
 #### pgAdmin
 
 #### Lighttpd with PHP (5.6 and 7.0)
@@ -208,11 +208,17 @@ cd arm
 docker build -t izone/arm:mariadb ./mariadb/
 ```
 
-### Postgres 9.5.5
+### Postgres latest (9.6.1)
 ##### Pull image
 ```
 docker pull izone/arm:postgres
+docker pull izone/arm:postgres-9.6
+docker pull izone/arm:postgres-9.6.1
 ```
+##### Pull image 9.5.5
+```
+docker pull izone/arm:postgres-9.5
+docker pull izone/arm:postgres-9.5.5
 
 ##### Run pulled image
 ```
@@ -220,6 +226,8 @@ docker run --name Postgres -h postgres \
 -p 5432:5432 \
 -e POSTGRES_PASSWORD=postgres \
 -d izone/arm:postgres
+
+docker exec -ti Postgres psql -U postgres -c "SELECT version();"
 
 docker logs -f Postgres
 
