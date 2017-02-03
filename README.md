@@ -353,22 +353,63 @@ docker build -t izone/arm:owncloud ./owncloud/
 
 
 -----
-### Debian jessie
-##### Pull image
+### Debian
+##### Pull images
+
+##### Jessie
 ```
 docker pull izone/arm:jessie
-```
-##### Run pulled image
-```
+
 docker run --rm --name Debian -ti izone/arm:jessie cat /etc/debian_version
+```
+##### Wheezy
+```
+docker pull izone/arm:wheezy
+
+docker run --rm --name Debian -ti izone/arm:wheezy cat /etc/debian_version
 ```
 ##### Buildin
 ```
 git clone https://github.com/luvres/arm.git
 cd arm
 
-docker build -t izone/arm:jessie ./jessie/
+docker build -t izone/arm:jessie ./debian/jessie/
+docker build -t izone/arm:wheezy ./debian/wheezy/
 ```
+
+-----
+### Ubuntu
+##### Pull images
+
+##### Xenial
+```
+docker pull izone/arm:xenial
+
+docker run --rm --name Ubuntu -ti izone/arm:xenial cat /etc/issue
+```
+##### Trusty
+```
+docker pull izone/arm:trusty
+
+docker run --rm --name Ubuntu -ti izone/arm:trusty cat /etc/issue
+```
+##### Precise
+```
+docker pull izone/arm:precise
+
+docker run --rm --name Ubuntu -ti izone/arm:precise cat /etc/issue
+```
+##### Buildin
+```
+git clone https://github.com/luvres/arm.git
+cd arm
+
+docker build -t izone/arm:xenial ./ubuntu/xenial/
+docker build -t izone/arm:trusty ./ubuntu/trusty/
+docker build -t izone/arm:precise ./ubuntu/precise/
+```
+
+
 -----
 ##### Procedure used for debian images
 ```
@@ -391,6 +432,19 @@ docker build -t izone/arm:jessie .
 ```
 docker build -t izone/arm .
 ```
+#### Base (Debian)
+```
+docker build -t izone/arm:jessie ./debian/jessie/ && \
+docker build -t izone/arm:wheezy ./debian/wheezy/
+```
+#### Base (Ubuntu)
+```
+docker build -t izone/arm:xenial ./ubuntu/xenial/ && \
+docker build -t izone/arm:trusty ./ubuntu/trusty/ && \
+docker build -t izone/arm:precise ./ubuntu/precise/
+```
+
+
 #### Databases
 ```
 docker build -t izone/arm:mariadb ./mariadb/ && \
