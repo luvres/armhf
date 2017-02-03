@@ -360,7 +360,7 @@ docker pull izone/arm:jessie
 ```
 ##### Run pulled image
 ```
-docker run --rm --name Debian -ti izone/arm:debian bash
+docker run --rm --name Debian -ti izone/arm:jessie cat /etc/debian_version
 ```
 ##### Buildin
 ```
