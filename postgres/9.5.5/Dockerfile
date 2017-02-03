@@ -13,9 +13,9 @@ ENV LANG en_US.utf8
 
 RUN mkdir /docker-entrypoint-initdb.d
 
-ENV PG_MAJOR 9.6
-ENV PG_VERSION 9.6.1
-ENV PG_SHA256 e5101e0a49141fc12a7018c6dad594694d3a3325f5ab71e93e0e51bd94e51fcd
+ENV PG_MAJOR 9.5
+ENV PG_VERSION 9.5.5
+ENV PG_SHA256 02c65290be74de6604c3fed87c9fd3e6b32e949f0ab8105a75bd7ed5aa71f394
 
 RUN set -ex \
 	\
@@ -61,7 +61,7 @@ RUN set -ex \
 	&& grep '/var/run/postgresql' src/include/pg_config_manual.h.new \
 	&& mv src/include/pg_config_manual.h.new src/include/pg_config_manual.h \
 # configure options taken from:
-# https://anonscm.debian.org/cgit/pkg-postgresql/postgresql.git/tree/debian/rules?h=9.6
+# https://anonscm.debian.org/cgit/pkg-postgresql/postgresql.git/tree/debian/rules?h=9.5
 	&& ./configure \
 # "/usr/src/postgresql/src/backend/access/common/tupconvert.c:105: undefined reference to `libintl_gettext'"
 #		--enable-nls \
