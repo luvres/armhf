@@ -1,4 +1,5 @@
 ### Debian jessie
+-----
 ##### Pull image
 ```
 docker pull izone/arm:jessie
@@ -18,6 +19,7 @@ docker build -t izone/arm:jessie ./jessie/
 ##### Procedure used for debian images
 ```
 git clone https://github.com/docker/docker.git
+cd docker/contrib
 
 sudo ./mkimage.sh -d . debootstrap --variant=minbase --components=main 
 --include=inetutils-ping,iproute2  jessie http://httpredir.debian.org/debian
