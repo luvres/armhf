@@ -1,4 +1,4 @@
-### Debian jessie
+### Debian Jessie
 -----
 ##### Pull image
 ```

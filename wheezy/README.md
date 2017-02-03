@@ -1,4 +1,4 @@
-### Debian wheezy
+### Debian Wheezy
 -----
 ##### Pull image
 ```
