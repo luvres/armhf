@@ -13,7 +13,7 @@ docker run --rm --name Debian -ti izone/arm:wheezy cat /etc/debian_version
 git clone https://github.com/luvres/arm.git
 cd arm
 
-docker build -t izone/arm:wheezy ./jessie/
+docker build -t izone/arm:wheezy ./wheezy/
 ```
 -----
 ##### Procedure used for debian images
