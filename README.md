@@ -356,7 +356,7 @@ docker build -t izone/arm:owncloud ./owncloud/
 ### Debian jessie
 ##### Pull image
 ```
-docker pull izone/arm:debian
+docker pull izone/arm:jessie
 ```
 ##### Run pulled image
 ```
@@ -367,31 +367,21 @@ docker run --rm --name Debian -ti izone/arm:debian bash
 git clone https://github.com/luvres/arm.git
 cd arm
 
-docker build -t izone/arm:debian ./debian/
+docker build -t izone/arm:jessie ./jessie/
 ```
+-----
+##### Procedure used for debian images
+```
+git clone https://github.com/docker/docker.git
 
-### PHP 5.6 and Apache
-##### Pull image
-```
-docker pull izone/arm:php56-apache
-```
-##### Run pulled image
-```
-mkdir $HOME/www
+sudo ./mkimage.sh -d . debootstrap --variant=minbase --components=main 
+--include=inetutils-ping,iproute2  jessie http://httpredir.debian.org/debian
 
-docker run --rm --name Php -h php \
--p 80:80 \
--v $HOME/www:/var/www/html \
-izone/arm:php56-apache
+docker build -t izone/arm:jessie .
 ```
-##### Buildin
-```
-git clone https://github.com/luvres/arm.git
-cd arm
-
-docker build -t izone/arm:php56-apache ./debian/php56/
-```
-
+##### References for building docker images for ARM architecture
+##### https://github.com/docker/docker
+##### https://hub.docker.com/r/armv7/armhf-debian/
 
 -----
 ### AUTO CONSTRUCTION creation sequences
