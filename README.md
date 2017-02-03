@@ -452,7 +452,7 @@ docker build -t izone/arm:jessie .
 ##### https://hub.docker.com/r/armv7/armhf-debian/
 ##### https://github.com/tianon/docker-brew-debian
 
------
+----------
 ### AUTO CONSTRUCTION creation sequences
 #### Base (Alpine)
 ```
@@ -477,6 +477,19 @@ docker build -t izone/arm:mariadb ./mariadb/ && \
 docekr build -t izone/arm:phpmyadmin ./phpmyadmin/
 
 docker build -t izone/arm:postgres ./postgres/ && \
+##### Postgres latest (9.6.1)
+```
+docker build -t izone/arm:postgres ./postgres/ && \
+docker build -t izone/arm:postgres-9.6 ./postgres/ && \
+docker build -t izone/arm:postgres-9.6.1 ./postgres/
+```
+##### Postgres 9.5
+```
+docker build -t izone/arm:postgres-9.5 ./postgres/9.5.5 && \
+docker build -t izone/arm:postgres-9.5.5 ./postgres/9.5.5
+```
+##### PgAdmin
+```
 docker build -t izone/arm:python2 ./python2/ && \
 docker build -t izone/arm:pgadmin ./pgadmin/
 ```
