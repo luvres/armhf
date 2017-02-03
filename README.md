@@ -1,7 +1,21 @@
 ## ARMv7 - Build in RaspberryPi 2
-### Alpine
+### Alpine Linux
 ### Debian (Jessie, Wheezy)
 ### Ubuntu (Xenial, Trusty, Precise)
+
+#### Openjdk 8
+#### Tomcat 8.0.41
+#### Windfly 10.1.0 Final
+
+#### MySQL (MariaDB)
+#### phpMyAdmin
+#### Postgres 9.5.5
+#### pgAdmin
+
+#### Lighttpd with PHP (5.6 and 7.0)
+
+#### ALMPP stack instructions
+#### (Alpine, Lighttpd, MariaDB, Postgres, PHP)
 -----
 
 ### Latest image (Alpine Linux)
