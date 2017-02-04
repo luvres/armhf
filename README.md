@@ -72,7 +72,7 @@ docker run --rm --name Php -h php \
 --link Postgres:postgres-host \
 -p 80:80 \
 -v $HOME/www:/var/www \
--ti izone/alpine:php7
+-ti izone/arm:php7
 ```
 ##### Browser access
 ```
