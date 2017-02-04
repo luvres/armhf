@@ -219,7 +219,7 @@ docker pull izone/arm:postgres-9.6.1
 ```
 docker pull izone/arm:postgres-9.5
 docker pull izone/arm:postgres-9.5.5
-
+```
 ##### Run pulled image
 ```
 docker run --name Postgres -h postgres \
@@ -470,13 +470,12 @@ docker build -t izone/arm:trusty ./ubuntu/trusty/ && \
 docker build -t izone/arm:precise ./ubuntu/precise/
 ```
 
-
 #### Databases
+##### MariaDB 10.1
 ```
 docker build -t izone/arm:mariadb ./mariadb/ && \
 docekr build -t izone/arm:phpmyadmin ./phpmyadmin/
-
-docker build -t izone/arm:postgres ./postgres/ && \
+```
 ##### Postgres latest (9.6.1)
 ```
 docker build -t izone/arm:postgres ./postgres/ && \
