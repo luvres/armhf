@@ -57,12 +57,22 @@ docker run --name Php -h php \
 ##### PHP 7 and Lighttpd
 ```
 mkdir $HOME/www
-
+```
+```
 docker run --name Php -h php \
 --link MariaDB:mariadb-host \
 -p 80:80 \
 -v $HOME/www:/var/www \
--d izone/arm:php
+-d izone/arm:php7
+```
+##### or
+```
+docker run --rm --name Php -h php \
+--link MariaDB:mariadb-host \
+--link Postgres:postgres-host \
+-p 80:80 \
+-v $HOME/www:/var/www \
+-ti izone/alpine:php7
 ```
 ##### Browser access
 ```
