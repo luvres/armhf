@@ -2,6 +2,7 @@
 ### Alpine Linux
 ### Debian (Jessie, Wheezy)
 ### Ubuntu (Xenial, Trusty, Precise)
+### Arch Linux
 
 #### Openjdk 8
 #### Tomcat 8.0.41
@@ -435,7 +436,6 @@ docker build -t izone/arm:trusty ./ubuntu/trusty/
 docker build -t izone/arm:precise ./ubuntu/precise/
 ```
 
-
 -----
 ##### Procedure used for debian images
 ```
@@ -451,6 +451,32 @@ docker build -t izone/arm:jessie .
 ##### https://github.com/docker/docker
 ##### https://hub.docker.com/r/armv7/armhf-debian/
 ##### https://github.com/tianon/docker-brew-debian
+
+### Arch Linux
+##### Pull image
+```
+docker pull izone/arm:archlinux
+```
+##### Run pulled image
+```
+docker run --rm --name ArchLinux -h archlinux -ti izone/arm:archlinux bash
+```
+##### Procedure for Arch Linux build
+```
+sudo pacman -S pkgfile
+sudo pkgfile --update
+sudo pkgfile pacstrap
+sudo pacman -S extra/arch-install-scripts
+sudo pacman -S expect
+sudo pacman -S archlinuxarm-keyring
+sudo pacman-key --init
+sudo pacman-key --populate archlinuxarm
+
+git clone https://github.com/docker/docker.git
+cd docker/contrib
+sed -i 's/armv${version}h\/archlinux/izone\/arm:archlinux/' mkimage-arch.sh
+sudo ./mkimage-arch.sh 
+```
 
 ----------
 ### AUTO CONSTRUCTION creation sequences
