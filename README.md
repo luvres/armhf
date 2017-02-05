@@ -367,11 +367,11 @@ docker build -t izone/arm:php7 ./php7/
 
 ### Nodejs
 #### Pull image options
-##### Node latest (7.5.0)
+##### Node latest (7.4.0)
 ```
 docker pull izone/arm:node
 docker pull izone/arm:node-7
-docker pull izone/arm:node-7.5
+docker pull izone/arm:node-7.4
 ```
 ##### Node 6.9.5
 ```
