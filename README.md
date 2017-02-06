@@ -556,7 +556,7 @@ docker build -t izone/arm:postgres-9.5.5 ./postgres/9.5.5/
 ##### Postgres 9.4
 ```
 docker build -t izone/arm:postgres-9.4 ./postgres/9.4.10/ && \
-docker build -t izone/arm:postgres-9.5.5 ./postgres/9.4.10/
+docker build -t izone/arm:postgres-9.4.10 ./postgres/9.4.10/
 ```
 ##### Postgres 9.3
 ```
