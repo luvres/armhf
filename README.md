@@ -10,13 +10,15 @@
 
 #### MySQL (MariaDB)
 #### phpMyAdmin
-#### Postgres (9.6.1 and 9.5.5)
+#### Postgres (9.6.1, 9.5.5, 9.4.10, 9.3.15, 9.2.19)
 #### pgAdmin
 
 #### Lighttpd with PHP (5.6 and 7.0)
 
 #### ALMPP stack instructions
 #### (Alpine, Lighttpd, MariaDB, Postgres, PHP)
+
+#### NodeJS
 -----
 
 ### Latest image (Alpine Linux)
@@ -548,9 +550,25 @@ docker build -t izone/arm:postgres-9.6.1 ./postgres/
 ```
 ##### Postgres 9.5
 ```
-docker build -t izone/arm:postgres-9.5 ./postgres/9.5.5 && \
-docker build -t izone/arm:postgres-9.5.5 ./postgres/9.5.5
+docker build -t izone/arm:postgres-9.5 ./postgres/9.5.5/ && \
+docker build -t izone/arm:postgres-9.5.5 ./postgres/9.5.5/
 ```
+##### Postgres 9.4
+```
+docker build -t izone/arm:postgres-9.4 ./postgres/9.4.10/ && \
+docker build -t izone/arm:postgres-9.5.5 ./postgres/9.4.10/
+```
+##### Postgres 9.3
+```
+docker build -t izone/arm:postgres-9.3 ./postgres/9.3.15/ && \
+docker build -t izone/arm:postgres-9.3.15 ./postgres/9.3.15/
+```
+##### Postgres 9.2
+```
+docker build -t izone/arm:postgres-9.2 ./postgres/9.2.19/ && \
+docker build -t izone/arm:postgres-9.2.19 ./postgres/9.2.19/
+```
+
 ##### PgAdmin
 ```
 docker build -t izone/arm:python2 ./python2/ && \
