@@ -1,0 +1,4 @@
+systemd-timesync:100000:65536
+systemd-network:165536:65536
+systemd-resolve:231072:65536
+systemd-bus-proxy:296608:65536

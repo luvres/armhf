@@ -1,0 +1,11 @@
+14f27f2e0c125f2cffb9e43a6cc907bd  bin/ping
+7a3cb6bf96e0d93e655609aae420117a  bin/ping6
+240d0e72aa9bcfe731a19787bf394cd1  usr/share/doc/inetutils-ping/AUTHORS
+88e609d03649cf280b132005fc05ca55  usr/share/doc/inetutils-ping/NEWS.gz
+73f9670c71ff3fb0f65cf2cc28eb2188  usr/share/doc/inetutils-ping/THANKS
+103c96428d07dcf22b5ec753acfc7d24  usr/share/doc/inetutils-ping/changelog.Debian.gz
+bce85e1df7d799224d1242c3d7ce87de  usr/share/doc/inetutils-ping/changelog.gz
+6ffb18cd9e052ab6876caf6c42b80251  usr/share/doc/inetutils-ping/copyright
+9bff15b275c09353d2a528e09812876d  usr/share/lintian/overrides/inetutils-ping
+af45400a4e4c5af3e45635f9b7f51178  usr/share/man/man1/ping.1.gz
+3cdabe3e35ebfd6d58a119a65f504c91  usr/share/man/man1/ping6.1.gz

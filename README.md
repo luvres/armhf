@@ -426,6 +426,14 @@ docker build -t izone/arm:owncloud ./owncloud/
 ##### Jessie
 ```
 docker pull izone/arm:jessie
+```
+##### Jessie-slim
+```
+tar Jxf rootfs.tar.xz
+rm usr/share/doc/* usr/share/locale/* usr/share/man/* usr/share/info/* rootfs.tar.xz -fR
+tar Jcf rootfs.tar.xz .*
+
+docker pull izone/arm:jessie-slim
 
 docker run --rm --name Debian -ti izone/arm:jessie cat /etc/debian_version
 ```
