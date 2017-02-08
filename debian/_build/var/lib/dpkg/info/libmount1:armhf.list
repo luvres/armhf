@@ -6,7 +6,7 @@
 /usr/share
 /usr/share/doc
 /usr/share/doc/libmount1
-/usr/share/doc/libmount1/copyright
-/usr/share/doc/libmount1/changelog.gz
 /usr/share/doc/libmount1/changelog.Debian.gz
+/usr/share/doc/libmount1/changelog.gz
+/usr/share/doc/libmount1/copyright
 /lib/arm-linux-gnueabihf/libmount.so.1

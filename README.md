@@ -467,7 +467,7 @@ docker pull izone/arm:jessie
 ```
 tar Jxf rootfs.tar.xz
 rm usr/share/doc/* usr/share/locale/* usr/share/man/* usr/share/info/* rootfs.tar.xz -fR
-tar Jcf rootfs.tar.xz .*
+tar Jcf rootfs.tar.xz *
 
 docker pull izone/arm:jessie-slim
 

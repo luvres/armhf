@@ -37,9 +37,3 @@ staff:x:50:
 games:x:60:
 users:x:100:
 nogroup:x:65534:
-input:x:101:
-systemd-journal:x:102:
-systemd-timesync:x:103:
-systemd-network:x:104:
-systemd-resolve:x:105:
-systemd-bus-proxy:x:106:

@@ -16,7 +16,4 @@ list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
 irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
 gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
 nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-systemd-timesync:x:100:103:systemd Time Synchronization,,,:/run/systemd:/bin/false
-systemd-network:x:101:104:systemd Network Management,,,:/run/systemd/netif:/bin/false
-systemd-resolve:x:102:105:systemd Resolver,,,:/run/systemd/resolve:/bin/false
-systemd-bus-proxy:x:103:106::/run/systemd:/bin/false
+_apt:x:100:65534::/nonexistent:/bin/false

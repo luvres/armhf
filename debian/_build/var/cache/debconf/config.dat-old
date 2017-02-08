@@ -82,6 +82,14 @@ Name: glibc/disable-screensaver
 Template: glibc/disable-screensaver
 Owners: libc6, libc6:armhf
 
+Name: glibc/kernel-not-supported
+Template: glibc/kernel-not-supported
+Owners: libc6, libc6:armhf
+
+Name: glibc/kernel-too-old
+Template: glibc/kernel-too-old
+Owners: libc6, libc6:armhf
+
 Name: glibc/restart-failed
 Template: glibc/restart-failed
 Owners: libc6, libc6:armhf
@@ -198,20 +206,4 @@ Owners: tzdata
 Name: tzdata/Zones/US
 Template: tzdata/Zones/US
 Owners: tzdata
-
-Name: udev/new_kernel_needed
-Template: udev/new_kernel_needed
-Owners: udev
-
-Name: udev/reboot_needed
-Template: udev/reboot_needed
-Owners: udev
-
-Name: udev/sysfs_deprecated_incompatibility
-Template: udev/sysfs_deprecated_incompatibility
-Owners: udev
-
-Name: udev/title/upgrade
-Template: udev/title/upgrade
-Owners: udev
 
