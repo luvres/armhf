@@ -18,8 +18,5 @@ RUN apt-get update -y \
     && chmod 775 /var/lib/mongodb \
     && mkdir -p /data/db /data/configdb
 
-#COPY docker-entrypoint.sh /entrypoint.sh
-#ENTRYPOINT ["/entrypoint.sh"]
-
 EXPOSE 27017 28017
 CMD ["mongod"]
