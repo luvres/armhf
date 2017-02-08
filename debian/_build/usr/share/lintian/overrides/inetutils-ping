@@ -1,2 +1,0 @@
-inetutils-ping: setuid-binary bin/ping 4755 root/root
-inetutils-ping: setuid-binary bin/ping6 4755 root/root

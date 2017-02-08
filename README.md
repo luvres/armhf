@@ -465,13 +465,19 @@ docker pull izone/arm:jessie
 ```
 ##### Jessie-slim
 ```
-tar Jxf rootfs.tar.xz
-rm usr/share/doc/* usr/share/locale/* usr/share/man/* usr/share/info/* rootfs.tar.xz -fR
-tar Jcf rootfs.tar.xz *
-
 docker pull izone/arm:jessie-slim
 
 docker run --rm --name Debian -ti izone/arm:jessie cat /etc/debian_version
+```
+##### Sid
+```
+docker pull izone/arm:sid
+```
+##### Sid-slim
+```
+docker pull izone/arm:sid-slim
+
+docker run --rm --name Debian -ti izone/arm:sid cat /etc/debian_version
 ```
 ##### Wheezy
 ```
@@ -479,20 +485,11 @@ docker pull izone/arm:wheezy
 
 docker run --rm --name Debian -ti izone/arm:wheezy cat /etc/debian_version
 ```
-##### Sid
+##### list of files/directories which will be removed for the "slim" image variants.
 ```
-docker pull izone/arm:sid
-
-docker run --rm --name Debian -ti izone/arm:sid cat /etc/debian_version
-```
-##### Buildin
-```
-git clone https://github.com/luvres/arm.git
-cd arm
-
-docker build -t izone/arm:jessie ./debian/jessie/
-docker build -t izone/arm:wheezy ./debian/wheezy/
-docker build -t izone/arm:sid ./debian/sid/
+tar Jxf rootfs.tar.xz
+rm usr/share/doc/* usr/share/locale/* usr/share/man/* usr/share/info/* rootfs.tar.xz -fR
+tar Jcf rootfs.tar.xz .*
 ```
 
 -----
@@ -577,9 +574,11 @@ docker build -t izone/arm .
 ```
 #### Base (Debian)
 ```
-docker build -t izone/arm:jessie ./debian/jessie/ && \
-docker build -t izone/arm:wheezy ./debian/wheezy/ && \
+docker build -t izone/arm:jessie ./debian/jessie/
+docker build -t izone/arm:jessie-slim ./debian/jessie-slim/
 docker build -t izone/arm:sid ./debian/sid/
+docker build -t izone/arm:sid-slim ./debian/sid-slim/
+docker build -t izone/arm:wheezy ./debian/wheezy/
 ```
 #### Base (Ubuntu)
 ```
