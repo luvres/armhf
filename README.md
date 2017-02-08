@@ -19,7 +19,7 @@
 #### (Alpine, Lighttpd, MariaDB, Postgres, PHP)
 
 #### NodeJS
-#### MongoDB 3.0
+#### MongoDB 3.0.9
 -----
 
 ### Latest image (Alpine Linux)
