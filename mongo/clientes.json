@@ -1,0 +1,34 @@
+{ "nome" : "Joaquim Maria Machado de Assis",  "telefone" : "32-2113-6009", "endereco" : "Rua Rio de Janeiro, 1839", "cidade" : "Bicas", "uf" : "MG", "grauFidelidade" : 87.6, "ativo" : true }
+{ "nome" : "Joao Paulo Emílio Cristovao dos Santos Coelho Barreto", "telefone" : "32-2431-6112", "endereco" : "Rua Rio de Janeiro, 1881/201", "cidade" : "Bicas", "uf" : "MG", "grauFidelidade" : 50,  "ativo" : false , "dependentes" : [ { "nome" : "Maria", "grau" : "e"}, { "nome" : "Pedro", "grau" : "f"} ] }
+{ "nome" : "Afonso Henriques de Lima Barreto", "uf" : "MG", "grauFidelidade" : 30.33, "ativo" : true, "dependentes" : [ { "nome" : "Abilio", "grau" : "f"}, { "nome" : "Carolina", "grau" : "f"}, { "nome" : "Daniel", "grau" : "f"}, { "nome" : "Eusebio", "grau" : "f"}, { "nome" : "Francisco", "grau" : "f"} ] , dtNasc:{$date:"1881-05-13T00:00:00Z"}, biografia: "https://pt.wikipedia.org/wiki/Lima_Barreto" }
+{ "nome" : "Julia Valentim da Silveira Lopes de Almeida", "uf" : "MG", "grauFidelidade" : 7.7, "ativo" : true  }
+{ "nome" : "Joao Simoes Lopes Neto", "uf" : "RJ", "grauFidelidade" : 99 , "ativo" : true }
+{ "nome" : "Jose Bento Renato Monteiro Lobato" ,  "uf" : "RJ", "grauFidelidade" : 41.8, "ativo" : true }
+{ "nome" : "Antonio Castilho de Alcantara Machado dOliveira",  "uf" : "RJ", "grauFidelidade" : 61, "ativo" : true  }
+{ "nome" : "Graciliano Ramos de Oliveira",  "uf" : "RJ", "ativo" : true , dtNasc:{$date:"1892-10-27T00:00:00Z"},  biografia: "http://www.releituras.com/graciramos_bio.asp" , "dependentes" : [ { "nome" : "Rosa", "grau" : "e"} ] }
+{ "nome" : "Eddy Dias da Cruz", "uf" : "MG", "ativo" : true  }
+{ "nome" : "Anibal Monteiro Machado" , "uf" : "MG", "ativo" : true }
+{ "nome" : "Mario Raul de Morais Andrade", "uf" : "MG"  , "ativo" : false, "dependentes" : [ { "nome" : "Tais", "grau" : "e"} ] } 
+{ "nome" : "Bernardo Elis Fleury de Campos Curado", "uf" : "SP" , "ativo" : false  }
+{ "nome" : "Carlos Drummond de Andrade", "uf" : "SP"  , "ativo" : true , dtNasc:{$date:"1902-10-31T00:00:00Z"}, biografia: "http://www.releituras.com/drummond_bio.asp" }
+{ "nome" : "Osman da Costa Lins", "uf" : "ES" , "grauFidelidade" : 60.8 , "ativo" : true }
+{ "nome" : "Murilo Eugenio Rubiao", "uf" : "MG" , "ativo" : false  }
+{ "nome" : "Samuel Rawet" , "uf" : "MG" , "ativo" : false }
+{ "nome" : "Rubem Braga" , "uf" : "RJ", "dependentes" : [ { "nome" : "Zelia", "grau" : "e"}, { "nome" : "Gilberto", "grau" : "f"}, { "nome" : "Hugo", "grau" : "f"}, { "nome" : "Ines", "grau" : "f"}, { "nome" : "Jose Augusto", "grau" : "f"}, { "nome" : "Luisa", "grau" : "f"}, { "nome" : "Madalena", "grau" : "f"} ] } 
+{ "nome" : "Rachel de Queiroz", "uf" : "MG"  }
+{ "nome" : "Erico Lopes Verissimo" , "uf" : "MG" , dtNasc:{$date:"1905-12-17T00:00:00Z"}, biografia: "http://www.releituras.com/everissimo_bio.asp" }
+{ "nome" : "Jose J. Veiga", "uf" : "SP"  }
+{ "nome" : "Jose Rubem Fonseca" , "uf" : "SP" }
+{ "nome" : "Dinah Silveira de Queiroz", "uf" : "MG", "dependentes" : [ { "nome" : "Zelio", "grau" : "e"} ] }
+{ "nome" : "Clarice Lispector" , "uf" : "MG" }
+{ "nome" : "Otto de Oliveira Lara Resende" , "uf" : "MG" }
+{ "nome" : "Origenes Lessa", "uf" : "RJ"  }
+{ "nome" : "Lygia Fagundes Telles" , dtNasc:{$date:"1923-04-19T00:00:00Z"},  biografia: "http://www.releituras.com/lftelles_bio.asp" }
+{ "nome" : "Fernando Tavares Sabino"  }
+{ "nome" : "Dalton Jérson Trevisan"  }
+{ "nome" : "Carlos Heitor Cony"  }
+{ "nome" : "Roberto Francis Drummond"  }
+{ "nome" : "Nélida Cuiñas Piñon"  , "grauFidelidade" : 32.70}
+{ "nome" : "Joao Ubaldo Osorio Pimentel Ribeiro", "grauFidelidade" : 98, dtNasc:{$date:"1941-01-23T00:00:00Z"}  }
+{ "nome" : "Sergio Sant''Anna" , "grauFidelidade" : 2 }
+{ "nome" : "Cecília Benevides de Carvalho Meireles" , uf:"RJ",  dtNasc:{$date:"1901-11-07T00:00:00Z"}} 
