@@ -454,7 +454,6 @@ cd arm
 docker build -t izone/arm:owncloud ./owncloud/
 ```
 
-
 -----
 ### Debian
 ##### Pull images
@@ -467,7 +466,7 @@ docker pull izone/arm:jessie
 ```
 docker pull izone/arm:jessie-slim
 
-docker run --rm --name Debian -ti izone/arm:jessie cat /etc/debian_version
+docker run --rm --name Debian -ti izone/arm:jessie-slim cat /etc/debian_version
 ```
 ##### Sid
 ```
@@ -477,19 +476,23 @@ docker pull izone/arm:sid
 ```
 docker pull izone/arm:sid-slim
 
-docker run --rm --name Debian -ti izone/arm:sid cat /etc/debian_version
+docker run --rm --name Debian -ti izone/arm:sid-slim cat /etc/debian_version
 ```
 ##### Wheezy
 ```
 docker pull izone/arm:wheezy
+```
+##### Wheezy-slim
+```
+docker pull izone/arm:wheezy-slim
 
-docker run --rm --name Debian -ti izone/arm:wheezy cat /etc/debian_version
+docker run --rm --name Debian -ti izone/arm:wheezy-slim cat /etc/debian_version
 ```
 ##### list of files/directories which will be removed for the "slim" image variants.
 ```
 tar Jxf rootfs.tar.xz
 rm usr/share/doc/* usr/share/locale/* usr/share/man/* usr/share/info/* rootfs.tar.xz -fR
-tar Jcf rootfs.tar.xz .*
+tar Jcf rootfs.tar.xz *
 ```
 
 -----
