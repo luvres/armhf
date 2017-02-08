@@ -19,6 +19,7 @@
 #### (Alpine, Lighttpd, MariaDB, Postgres, PHP)
 
 #### NodeJS
+#### MongoDB 3.0
 -----
 
 ### Latest image (Alpine Linux)
@@ -406,7 +407,7 @@ mkdir -p $HOME/mongodb/data/db
 docker run --rm -h mongodb --name MongoDB \
 -p 27017:27017 -p 28017:28017 \
 -e AUTH=no \
--v ~/mongodb/data/db:/data/db \
+-v $HOME/mongodb/data/db:/data/db \
 izone/arm:mongo-3.0.9
 ```
 ##### Testing
@@ -416,6 +417,11 @@ $HOME/mongodb/data/db/clientes.json
 
 docker exec -ti MongoDB bash
 mongoimport --stopOnError --db loja --collection clientes < "/data/db/clientes.json"
+
+mongo loja
+show collections
+db.clientes.count()
+db.clientes.find ( {}, { "nome" : 1 } )
 ```
 ##### Buildin
 ```
