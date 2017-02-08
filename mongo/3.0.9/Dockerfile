@@ -10,9 +10,7 @@ RUN apt-get update -y \
     && apt-get install -y libssl1.0.0 && rm -rf /var/lib/apt/lists/* \
     && adduser --ingroup nogroup --shell /etc/false --disabled-password --gecos "" --no-create-home mongodb \
     && chown root:root /usr/bin/mongo* \
-    #&& chown root:root /usr/bin/bsondump \
     && chmod 755 /usr/bin/mongo* \
-    #&& chmod 755 /usr/bin/bsondump
     && mkdir /var/log/mongodb \
     && chown mongodb:nogroup /var/log/mongodb \
     && mkdir /var/lib/mongodb \
