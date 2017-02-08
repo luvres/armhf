@@ -395,7 +395,7 @@ docker run --rm --name Node \
 -w /usr/src/app \
 -ti izone/arm:node-4 node script.js
 ```
-### MongoDB
+### MongoDB 3.0.9
 ##### Pull image
 ```
 docker pull izone/arm:mongo-3.0.9
