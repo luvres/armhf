@@ -403,7 +403,7 @@ docker pull izone/arm:mongo-3.0.9
 ##### Run pulled image
 ```
 mkdir -p $HOME/mongodb/data/db
-```
+
 docker run --rm -h mongodb --name MongoDB \
 -p 27017:27017 -p 28017:28017 \
 -e AUTH=no \
