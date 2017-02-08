@@ -3,12 +3,11 @@ MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
 ADD core/* /usr/bin/
 ADD ssl/* /usr/bin/
-#ADD tools/* /usr/bin/
 ADD mongodb.conf /etc/mongodb.conf
 ADD mongodb.service /lib/systemd/system/mongodb.service
 
 RUN apt-get update -y \
-    && apt-get install -y libssl1.0.0 \
+    && apt-get install -y libssl1.0.0 && rm -rf /var/lib/apt/lists/* \
     && adduser --ingroup nogroup --shell /etc/false --disabled-password --gecos "" --no-create-home mongodb \
     && chown root:root /usr/bin/mongo* && chown root:root /usr/bin/bsondump \
     && chmod 755 /usr/bin/mongo* && chmod 755 /usr/bin/bsondump \
