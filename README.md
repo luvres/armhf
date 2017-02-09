@@ -1,6 +1,7 @@
 ## ARMv7 - Build in RaspberryPi 2
 ### Alpine Linux
-### Debian (Jessie, Wheezy)
+### Debian (Jessie, Wheezy, Sid)
+### Debian Slim (Jessie, Wheezy, Sid)
 ### Ubuntu (Xenial, Trusty, Precise)
 ### Arch Linux
 
