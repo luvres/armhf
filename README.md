@@ -599,7 +599,7 @@ docker build -t izone/arm:mariadb ./mariadb/ && \
 docekr build -t izone/arm:phpmyadmin ./phpmyadmin/
 ```
 
-##### Postgres latest (9.6.2)
+##### Postgres 9.6.2 (Latest)
 ```
 docker build -t izone/arm:postgres ./postgres/ && \
 docker build -t izone/arm:postgres-9.6 ./postgres/ && \
