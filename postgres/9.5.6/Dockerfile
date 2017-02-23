@@ -13,9 +13,9 @@ ENV LANG en_US.utf8
 
 RUN mkdir /docker-entrypoint-initdb.d
 
-ENV PG_MAJOR 9.2
-ENV PG_VERSION 9.2.19
-ENV PG_SHA256 1d29d73a4f590fcc348280f13ac2ff6a0f72c94908c54e3c20b7ab1560e8dbad
+ENV PG_MAJOR 9.5
+ENV PG_VERSION 9.5.6
+ENV PG_SHA256 bb9e5f6d34e20783e96e10c1d6c0c09c31749e802aaa46b793ce2522725ae12f
 
 RUN set -ex \
 	\
@@ -110,6 +110,7 @@ RUN set -ex \
 	&& cd / \
 	&& rm -rf \
 		/usr/src/postgresql \
+		/usr/local/include/* \
 		/usr/local/share/doc \
 		/usr/local/share/man \
 	&& find /usr/local -name '*.a' -delete
@@ -122,6 +123,7 @@ RUN mkdir -p /var/run/postgresql && chown -R postgres:postgres /var/run/postgres
 ENV PATH /usr/lib/postgresql/$PG_MAJOR/bin:$PATH
 ENV PGDATA /var/lib/postgresql/data
 RUN mkdir -p "$PGDATA" && chown -R postgres:postgres "$PGDATA" && chmod 777 "$PGDATA" # this 777 will be replaced by 700 at runtime (allows semi-arbitrary "--user" values)
+
 VOLUME /var/lib/postgresql/data
 
 COPY docker-entrypoint.sh /
