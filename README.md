@@ -650,24 +650,25 @@ docker build -t izone/arm:openjdk7 ./openjdk/openjdk7/
 ```
 
 ### Nodejs
-##### Node 7.4.0 (Latest)
+##### Node 7.4.0
 ```
-docker build -t izone/arm:node ./node/7.4/ && \
-docker build -t izone/arm:node-7 ./node/7.4/
+docker build -t izone/arm:node-7 ./node/7.4/ && \
 docker build -t izone/arm:node-7.4 ./node/7.4/
+docker build -t izone/arm:node-7.4.0 ./node/7.4/
 ```
-##### Node 6.9.5
+##### Node 6.10.0
 ```
-docker build -t izone/arm:node-6 ./node/6.9/ && \
-docker build -t izone/arm:node-6.9 ./node/6.9/ && \
-docker build -t izone/arm:node-6.9.5 ./node/6.9/
+docker build -t izone/arm:node-6 ./node/6.10/ && \
+docker build -t izone/arm:node-6.10 ./node/6.10/ && \
+docker build -t izone/arm:node-6.10.0 ./node/6.10/
 ```
-##### Node 4.7.3
+##### Node 4.8.0
 ```
-docker build -t izone/arm:node-4 ./node/4.7/ && \
-docker build -t izone/arm:node-4.7 ./node/4.7/ && \
-docker build -t izone/arm:node-4.7.3 ./node/4.7/
+docker build -t izone/arm:node-4 ./node/4.8/ && \
+docker build -t izone/arm:node-4.8 ./node/4.8/ && \
+docker build -t izone/arm:node-4.8.0 ./node/4.8/
 ```
+
 ### MongoDB
 ```
 docker build -t izone/arm:mongo-3.0.9 ./mongo/3.0.9/
