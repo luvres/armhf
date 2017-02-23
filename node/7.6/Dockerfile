@@ -1,8 +1,9 @@
 FROM izone/arm:wheezy-slim
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
-RUN adduser -D -u 1000 node \
-  && apk add --no-cache gnupg curl bash
+RUN apt-get update && apt-get install -y curl
+RUN groupadd --gid 1000 node \
+  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \

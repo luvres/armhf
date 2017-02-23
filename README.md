@@ -651,6 +651,11 @@ docker build -t izone/arm:openjdk7 ./openjdk/openjdk7/
 ```
 
 ### Nodejs
+##### Node 7.6.0 (Latest)
+```
+docker build -t izone/arm:node-7.6 ./node/7.6/ && \
+docker build -t izone/arm:node-7.6.0 ./node/7.6/
+```
 ##### Node 7.4.0
 ```
 docker build -t izone/arm:node-7 ./node/7.4/ && \
