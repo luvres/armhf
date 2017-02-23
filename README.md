@@ -598,31 +598,32 @@ docker build -t izone/arm:precise ./ubuntu/precise/
 docker build -t izone/arm:mariadb ./mariadb/ && \
 docekr build -t izone/arm:phpmyadmin ./phpmyadmin/
 ```
-##### Postgres latest (9.6.1)
+
+##### Postgres latest (9.6.2)
 ```
 docker build -t izone/arm:postgres ./postgres/ && \
 docker build -t izone/arm:postgres-9.6 ./postgres/ && \
-docker build -t izone/arm:postgres-9.6.1 ./postgres/
+docker build -t izone/arm:postgres-9.6.2 ./postgres/
 ```
 ##### Postgres 9.5
 ```
-docker build -t izone/arm:postgres-9.5 ./postgres/9.5.5/ && \
-docker build -t izone/arm:postgres-9.5.5 ./postgres/9.5.5/
+docker build -t izone/arm:postgres-9.5 ./postgres/9.5.6/ && \
+docker build -t izone/arm:postgres-9.5.6 ./postgres/9.5.6/
 ```
 ##### Postgres 9.4
 ```
-docker build -t izone/arm:postgres-9.4 ./postgres/9.4.10/ && \
-docker build -t izone/arm:postgres-9.4.10 ./postgres/9.4.10/
+docker build -t izone/arm:postgres-9.4 ./postgres/9.4.11/ && \
+docker build -t izone/arm:postgres-9.4.11 ./postgres/9.4.11/
 ```
 ##### Postgres 9.3
 ```
-docker build -t izone/arm:postgres-9.3 ./postgres/9.3.15/ && \
-docker build -t izone/arm:postgres-9.3.15 ./postgres/9.3.15/
+docker build -t izone/arm:postgres-9.3 ./postgres/9.3.16/ && \
+docker build -t izone/arm:postgres-9.3.16 ./postgres/9.3.16/
 ```
 ##### Postgres 9.2
 ```
-docker build -t izone/arm:postgres-9.2 ./postgres/9.2.19/ && \
-docker build -t izone/arm:postgres-9.2.19 ./postgres/9.2.19/
+docker build -t izone/arm:postgres-9.2 ./postgres/9.2.20/ && \
+docker build -t izone/arm:postgres-9.2.20 ./postgres/9.2.20/
 ```
 
 ##### PgAdmin
