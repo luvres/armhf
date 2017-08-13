@@ -535,7 +535,7 @@ docker build -t izone/arm:precise ./ubuntu/precise/
 git clone https://github.com/docker/docker.git
 cd docker/contrib
 
-sudo ./mkimage.sh -d . debootstrap --variant=minbase --components=main 
+sudo ./mkimage.sh -d . debootstrap --variant=minbase --components=main \
 --include=inetutils-ping,iproute2  jessie http://httpredir.debian.org/debian
 
 docker build -t izone/arm:jessie .
