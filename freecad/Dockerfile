@@ -143,83 +143,83 @@ RUN \
     && make -j$(nproc) \
     && make install
 
-# ### Netgen 5.3.1
-# #----------------
-# RUN \
-#     cd \
-#     && apt-get install -y \
-#     openmpi-bin libopenmpi-dev \
-#     && git clone https://github.com/luvres/netgen.git \
-#     && cd netgen \
-#   \
-#   # building Netgen
-#     && ./configure \
-#             --prefix=$FREECAD \
-#             #--with-sysroot=/usr/lib/
-#             #--with-metis=/usr/lib/x86_64-linux-gnu/
-#             #--with-togl=/usr/lib/
-#             --with-tcl=/usr/lib/tcl8.5 \
-#             --with-tk=/usr/lib/tk8.5 \
-#             --with-occ=$FREECAD \
-#             --enable-occ \
-#             --enable-shared \
-#             --enable-nglib \
-#             --disable-gui \
-#             --disable-dependency-tracking \
-#             CPPFLAGS="-I/usr/lib/openmpi/include/" \
-#             CXXFLAGS="-DNGLIB_EXPORTS -std=gnu++11" \
-#   \
-#     && make -j$(nproc) \
-#     && make install \
-#   \
-#     && cp -rf libsrc $FREECAD/libsrc
+### Netgen 5.3.1
+#----------------
+RUN \
+    cd \
+    && apt-get install -y \
+    openmpi-bin libopenmpi-dev \
+    && git clone https://github.com/luvres/netgen.git \
+    && cd netgen \
+  \
+  # building Netgen
+    && ./configure \
+            --prefix=$FREECAD \
+            #--with-sysroot=/usr/lib/
+            #--with-metis=/usr/lib/x86_64-linux-gnu/
+            #--with-togl=/usr/lib/
+            --with-tcl=/usr/lib/tcl8.5 \
+            --with-tk=/usr/lib/tk8.5 \
+            --with-occ=$FREECAD \
+            --enable-occ \
+            --enable-shared \
+            --enable-nglib \
+            --disable-gui \
+            --disable-dependency-tracking \
+            CPPFLAGS="-I/usr/lib/openmpi/include/" \
+            CXXFLAGS="-DNGLIB_EXPORTS -std=gnu++11" \
+  \
+    && make -j$(nproc) \
+    && make install \
+  \
+    && cp -rf libsrc $FREECAD/libsrc
 
 
 
-# ### FreeCAD latest Github commit
-# #--------------------------------
-# # get FreeCAD
-# RUN \
-#     cd \
-#     && git clone https://github.com/FreeCAD/FreeCAD 
+### FreeCAD latest Github commit
+#--------------------------------
+# get FreeCAD
+RUN \
+    cd \
+    && git clone https://github.com/FreeCAD/FreeCAD 
+
+# building FreeCAD
+RUN \
+    cd \
+    && mkdir build \
+    && cd build \
+  \
+    && cmake ../FreeCAD \
+            -DCMAKE_INSTALL_PREFIX:PATH=$FREECAD \
+            -DOCC_INCLUDE_DIR=$FREECAD/include/opencascade \
+            -DNETGEN_ROOT=$FREECAD \
+            -DBUILD_FEM_NETGEN=ON 
+            #-DCMAKE_CXX_FLAGS="-DNETGEN_V5" 
+            #-DFREECAD_USE_OCC_VARIANT="Official Version"  
+            #-DOCC_LIBRARY=$FREECAD/lib/libTKernel.so 
+            #-DEIGEN3_INCLUDE_DIR=$FREECAD/include/eigen3 
+
+# Make FreeCAD
+RUN \
+    cd \
+    && cd build \
+    && make -j$(nproc) 
+    
+#    && make install
 # 
-# # building FreeCAD
-# RUN \
-#     cd \
-#     && mkdir build \
-#     && cd build \
-#   \
-#     && cmake ../FreeCAD \
-#             -DCMAKE_INSTALL_PREFIX:PATH=$FREECAD \
-#             -DOCC_INCLUDE_DIR=$FREECAD/include/opencascade \
-#             -DNETGEN_ROOT=$FREECAD \
-#             -DBUILD_FEM_NETGEN=ON 
-#             #-DCMAKE_CXX_FLAGS="-DNETGEN_V5" 
-#             #-DFREECAD_USE_OCC_VARIANT="Official Version"  
-#             #-DOCC_LIBRARY=$FREECAD/lib/libTKernel.so 
-#             #-DEIGEN3_INCLUDE_DIR=$FREECAD/include/eigen3 
-# 
-# # Make FreeCAD
-# RUN \
-#     cd \
-#     && cd build \
-#     && make -j$(nproc) 
-#     
-# #    && make install
-# # 
-# ## start FreeCAD
-# # $FREECAD/bin/FreeCAD
+## start FreeCAD
+# $FREECAD/bin/FreeCAD
 
 
-# ### Calculix 2.12 and CGX
-# #-------------------------
-# # RUN \
-# #     ccx_VERSION=2.12 && \
-# #     apt-get install -y gfortran cpio \
-# #     && cd \
-# #     && git clone https://github.com/luvres/calculix.git \
-# #     && cd calculix/ \
-# #     && ./install \
-# #     && cp $HOME/CalculiX-${ccx_VERSION}/bin/ccx_${ccx_VERSION} /usr/bin/ccx \
-# #     && cp $HOME/CalculiX-${ccx_VERSION}/bin/cgx /usr/bin/cgx \
-# #     && cd && rm CalculiX-${ccx_VERSION} calculix -fR
+### Calculix 2.12 and CGX
+#-------------------------
+# RUN \
+#     ccx_VERSION=2.12 && \
+#     apt-get install -y gfortran cpio \
+#     && cd \
+#     && git clone https://github.com/luvres/calculix.git \
+#     && cd calculix/ \
+#     && ./install \
+#     && cp $HOME/CalculiX-${ccx_VERSION}/bin/ccx_${ccx_VERSION} /usr/bin/ccx \
+#     && cp $HOME/CalculiX-${ccx_VERSION}/bin/cgx /usr/bin/cgx \
+#     && cd && rm CalculiX-${ccx_VERSION} calculix -fR
