@@ -117,31 +117,31 @@ RUN \
     && make -j$(nproc) \
     && make install
 
-# ### OCCT 7.1.0
-# #--------------
-# RUN \
-#     cd \
-#     && mkdir occt \
-#     && cd occt \
-#     && git clone https://github.com/luvres/occt.git \
-#     && cd occt \
-#   \
-#     && bash -c "grep -v vtkRenderingFreeTypeOpenGL src/TKIVtk/EXTERNLIB >& /tmp/EXTERNLIB" \
-#     && cp /tmp/EXTERNLIB src/TKIVtk/EXTERNLIB \
-#     && bash -c "grep -v vtkRenderingFreeTypeOpenGL src/TKIVtkDraw/EXTERNLIB >& /tmp/EXTERNLIB" \
-#     && cp /tmp/EXTERNLIB src/TKIVtkDraw/EXTERNLIB \
-#   # building OCCT
-#     && cd .. \
-#     && mkdir build \
-#     && cd build \
-#   \    
-#     && cmake \
-#         ../occt \
-#         -DCMAKE_INSTALL_PREFIX:PATH=$FREECAD \
-#         -DUSE_VTK:BOOL=OFF \
-#   \
-#     && make -j$(nproc) \
-#     && make install
+### OCCT 7.1.0
+#--------------
+RUN \
+    cd \
+    && mkdir occt \
+    && cd occt \
+    && git clone https://github.com/luvres/occt.git \
+    && cd occt \
+  \
+    && bash -c "grep -v vtkRenderingFreeTypeOpenGL src/TKIVtk/EXTERNLIB >& /tmp/EXTERNLIB" \
+    && cp /tmp/EXTERNLIB src/TKIVtk/EXTERNLIB \
+    && bash -c "grep -v vtkRenderingFreeTypeOpenGL src/TKIVtkDraw/EXTERNLIB >& /tmp/EXTERNLIB" \
+    && cp /tmp/EXTERNLIB src/TKIVtkDraw/EXTERNLIB \
+  # building OCCT
+    && cd .. \
+    && mkdir build \
+    && cd build \
+  \    
+    && cmake \
+        ../occt \
+        -DCMAKE_INSTALL_PREFIX:PATH=$FREECAD \
+        -DUSE_VTK:BOOL=OFF \
+  \
+    && make -j$(nproc) \
+    && make install
 
 # ### Netgen 5.3.1
 # #----------------
