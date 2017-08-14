@@ -91,32 +91,32 @@ RUN apt-get install -y \
     libeigen3-dev 
 
 
-# ### VTK 7.1.1
-# #-------------
-# RUN \
-#     vtk_VERSION_MAJOR=7.1 && \
-#     vtk_VERSION_MINOR=7.1.1 && \
-#   \
-#     cd \
-#     && mkdir vtk \
-#     && cd vtk \
-#     && wget http://www.vtk.org/files/release/${vtk_VERSION_MAJOR}/VTK-${vtk_VERSION_MINOR}.tar.gz \
-#     && gunzip VTK-${vtk_VERSION_MINOR}.tar.gz \
-#     && tar xf VTK-${vtk_VERSION_MINOR}.tar \
-#     && rm VTK-${vtk_VERSION_MINOR}.tar \
-#   # building VTK
-#     && mkdir build \
-#     && cd build \
-#   \
-#     && cmake ../VTK-${vtk_VERSION_MINOR} \
-#             -DCMAKE_INSTALL_PREFIX:PATH=$FREECAD \
-#             -DVTK_Group_Rendering:BOOL=OFF \
-#             -DVTK_Group_StandAlone:BOOL=ON \
-#             -DVTK_RENDERING_BACKEND=None \
-#   \
-#     && make -j$(nproc) \
-#     && make install
-# 
+### VTK 7.1.1
+#-------------
+RUN \
+    vtk_VERSION_MAJOR=7.1 && \
+    vtk_VERSION_MINOR=7.1.1 && \
+  \
+    cd \
+    && mkdir vtk \
+    && cd vtk \
+    && wget http://www.vtk.org/files/release/${vtk_VERSION_MAJOR}/VTK-${vtk_VERSION_MINOR}.tar.gz \
+    && gunzip VTK-${vtk_VERSION_MINOR}.tar.gz \
+    && tar xf VTK-${vtk_VERSION_MINOR}.tar \
+    && rm VTK-${vtk_VERSION_MINOR}.tar \
+  # building VTK
+    && mkdir build \
+    && cd build \
+  \
+    && cmake ../VTK-${vtk_VERSION_MINOR} \
+            -DCMAKE_INSTALL_PREFIX:PATH=$FREECAD \
+            -DVTK_Group_Rendering:BOOL=OFF \
+            -DVTK_Group_StandAlone:BOOL=ON \
+            -DVTK_RENDERING_BACKEND=None \
+  \
+    && make -j$(nproc) \
+    && make install
+
 # ### OCCT 7.1.0
 # #--------------
 # RUN \
@@ -142,7 +142,7 @@ RUN apt-get install -y \
 #   \
 #     && make -j$(nproc) \
 #     && make install
-# 
+
 # ### Netgen 5.3.1
 # #----------------
 # RUN \
@@ -173,9 +173,9 @@ RUN apt-get install -y \
 #     && make install \
 #   \
 #     && cp -rf libsrc $FREECAD/libsrc
-# 
-# 
-# 
+
+
+
 # ### FreeCAD latest Github commit
 # #--------------------------------
 # # get FreeCAD
@@ -209,8 +209,8 @@ RUN apt-get install -y \
 # # 
 # ## start FreeCAD
 # # $FREECAD/bin/FreeCAD
-# 
-# 
+
+
 # ### Calculix 2.12 and CGX
 # #-------------------------
 # # RUN \
