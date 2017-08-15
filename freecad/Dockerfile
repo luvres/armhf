@@ -94,12 +94,13 @@ RUN apt-get install -y \
 ### VTK 7.1.1
 #-------------
 RUN \
+    MAKEDIR=vtk && \
     vtk_VERSION_MAJOR=7.1 && \
     vtk_VERSION_MINOR=7.1.1 && \
   \
     cd \
-    && mkdir vtk \
-    && cd vtk \
+    && mkdir $MAKEDIR \
+    && cd $MAKEDIR \
     && wget http://www.vtk.org/files/release/${vtk_VERSION_MAJOR}/VTK-${vtk_VERSION_MINOR}.tar.gz \
     && gunzip VTK-${vtk_VERSION_MINOR}.tar.gz \
     && tar xf VTK-${vtk_VERSION_MINOR}.tar \
@@ -115,14 +116,17 @@ RUN \
             -DVTK_RENDERING_BACKEND=None \
   \
     && make -j$(nproc) \
-    && make install
+    && make install \
+  \
+    && cd && rm $MAKEDIR -fR
 
 ### OCCT 7.1.0
 #--------------
 RUN \
+    MAKEDIR=occt && \
     cd \
-    && mkdir occt \
-    && cd occt \
+    && mkdir $MAKEDIR \
+    && cd $MAKEDIR \
     && git clone https://github.com/luvres/occt.git \
     && cd occt \
   \
@@ -141,7 +145,9 @@ RUN \
         -DUSE_VTK:BOOL=OFF \
   \
     && make -j$(nproc) \
-    && make install
+    && make install \
+  \
+    && cd && rm $MAKEDIR -fR
 
 ### Netgen 5.3.1
 #----------------
@@ -172,7 +178,9 @@ RUN \
     && make -j$(nproc) \
     && make install \
   \
-    && cp -rf libsrc $FREECAD/libsrc
+    && cp -rf libsrc $FREECAD/libsrc \
+  \
+    && cd && rm netgen -fR
 
 
 
@@ -203,9 +211,13 @@ RUN \
 RUN \
     cd \
     && cd build \
-    && make -j$(nproc) 
+    && make -j$(nproc) \
     
-#    && make install
+    && make install \
+  \
+  # Clean
+    && cd && rm FreeCAD/ build/ -fR 
+ 
 # 
 ## start FreeCAD
 # $FREECAD/bin/FreeCAD
