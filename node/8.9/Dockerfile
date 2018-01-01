@@ -1,5 +1,6 @@
 FROM izone/arm
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
+COPY qemu-arm-static /usr/bin/qemu-arm-static
 
 ENV NODE_VERSION 8.9.3
 

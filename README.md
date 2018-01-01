@@ -371,11 +371,10 @@ docker build -t izone/arm:php7 ./php7/
 
 ### Nodejs
 #### Pull image options
-##### Node latest (7.4.0)
+##### Node LTS (8.9.3)
 ```
-docker pull izone/arm:node
-docker pull izone/arm:node-7
-docker pull izone/arm:node-7.4
+docker pull izone/arm:node-lts
+docker pull izone/arm:node-8.9
 ```
 ##### Node 6.9.5
 ```
@@ -395,6 +394,10 @@ docker run --rm --name Node \
 -v "$PWD":/usr/src/app \
 -w /usr/src/app \
 -ti izone/arm:node-4 node script.js
+```
+##### Version
+```
+docker run -ti --rm --name Node izone/arm:node-lts node -v
 ```
 
 ### MongoDB 3.0.9
@@ -651,7 +654,12 @@ docker build -t izone/arm:openjdk7 ./openjdk/openjdk7/
 ```
 
 ### Nodejs
-##### Node 7.6.0 (Latest)
+##### Node 8.9.3 LTS
+```
+docker build -t izone/arm:node-8.9 ./node/8.9/ && \
+docker build -t izone/arm:node-lts ./node/8.9/
+```
+##### Node 7.6.0
 ```
 docker build -t izone/arm:node-7.6 ./node/7.6/ && \
 docker build -t izone/arm:node-7.6.0 ./node/7.6/
