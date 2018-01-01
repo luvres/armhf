@@ -388,11 +388,12 @@ docker pull izone/arm:node-8.9
 docker run --rm --name Node \
 -v "$PWD":/usr/src/app \
 -w /usr/src/app \
--ti izone/arm:node-4 node script.js
+-ti izone/arm:node-lts node script.js
 ```
 ##### Version
 ```
 docker run -ti --rm --name Node izone/arm:node-lts node -v
+docker run -ti --rm --name Node izone/arm:node-current node -v
 ```
 
 ### MongoDB 3.0.9
