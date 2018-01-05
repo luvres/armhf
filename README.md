@@ -366,9 +366,9 @@ cd arm
 docker build -t izone/arm:php ./php/
 
 docker build -t izone/arm:php7 ./php7/
-
 ```
 
+-----
 ### Nodejs
 #### Pull image options
 
@@ -390,11 +390,13 @@ mkdir -p $HOME/_nodejs
 ```
 ##### npm init
 ```
-docker run -ti --rm -v $HOME/_nodejs:/root izone/arm:node-lts npm init
+docker run -ti --rm -v $HOME/_nodejs:/root \
+izone/arm:node-lts npm init
 ```
 ##### Install Express
 ```
-docker run -ti --rm -v $HOME/_nodejs:/root izone/arm:node-lts npm install express --save
+docker run -ti --rm -v $HOME/_nodejs:/root \
+izone/arm:node-lts npm install express --save
 ```
 ##### Run
 ```
@@ -411,6 +413,7 @@ docker run -ti --rm --name Node izone/arm:node-lts node -v
 docker run -ti --rm --name Node izone/arm:node-current node -v
 ```
 
+-----
 ### MongoDB 3.0.9
 ##### Pull image
 ```
@@ -664,6 +667,7 @@ docker build -t izone/arm:wildfly8 ./wildfly/8.2.1.Final/
 docker build -t izone/arm:openjdk7 ./openjdk/openjdk7/
 ```
 
+-----
 ### Nodejs
 ##### Node 9.3.0 Current
 ```
@@ -676,6 +680,7 @@ docker build -t izone/arm:node-8.9 ./node/8.9/ && \
 docker build -t izone/arm:node-lts ./node/8.9/
 ```
 
+-----
 ### MongoDB
 ```
 docker build -t izone/arm:mongo-3.0.9 ./mongo/3.0.9/
