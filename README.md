@@ -398,13 +398,21 @@ izone/arm:node-lts npm init
 docker run -ti --rm -v $HOME/_nodejs:/root \
 izone/arm:node-lts npm install express --save
 ```
-##### Run
+##### Run node
 ```
 docker run -d --rm --name Node -h node \
 -p 3000:3000 \
 -w /root \
 -v $HOME/_nodejs:/root \
 izone/arm:node-lts node app.js
+```
+##### Run nodemon
+```
+docker run -d --rm --name Node -h node \
+-p 3000:3000 \
+-w /root \
+-v $HOME/_nodejs:/root \
+izone/arm:node-lts /root/node_modules/nodemon/bin/nodemon.js app.js
 ```
 
 #### Version
