@@ -387,15 +387,18 @@ docker pull izone/arm:node-8.9
 ##### Create directory
 ```
 mkdir -p $HOME/_nodejs
+cd $HOME/_nodejs
+mkdir project
+cd project
 ```
 ##### npm init
 ```
-docker run -ti --rm -v $HOME/_nodejs:/root \
+docker run -ti --rm -v $PWD:/root \
 izone/arm:node-lts npm init
 ```
 ##### Install Express
 ```
-docker run -ti --rm -v $HOME/_nodejs:/root \
+docker run -ti --rm -v $PWD:/root \
 izone/arm:node-lts npm install express --save
 ```
 ##### Run node
@@ -403,7 +406,7 @@ izone/arm:node-lts npm install express --save
 docker run -d --rm --name Node -h node \
 -p 3000:3000 \
 -w /root \
--v $HOME/_nodejs:/root \
+-v $PWD:/root \
 izone/arm:node-lts node app.js
 ```
 ##### Run nodemon
@@ -411,7 +414,7 @@ izone/arm:node-lts node app.js
 docker run -d --rm --name Node -h node \
 -p 3000:3000 \
 -w /root \
--v $HOME/_nodejs:/root \
+-v $PWD:/root \
 izone/arm:node-lts /root/node_modules/nodemon/bin/nodemon.js app.js
 ```
 
