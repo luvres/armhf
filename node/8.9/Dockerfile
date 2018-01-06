@@ -2,7 +2,7 @@ FROM izone/arm
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 COPY qemu-arm-static /usr/bin/qemu-arm-static
 
-ENV NODE_VERSION 8.9.3
+ENV NODE_VERSION 8.9.4
 
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
@@ -68,3 +68,6 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && apk del .build-deps-yarn
 
 CMD [ "node" ]
+
+
+

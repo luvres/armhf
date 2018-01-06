@@ -407,10 +407,15 @@ docker run -d --rm --name Node -h node \
 izone/arm:node-lts node app.js
 ```
 
-##### Version
+#### Version
+##### Node
 ```
 docker run -ti --rm --name Node izone/arm:node-lts node -v
 docker run -ti --rm --name Node izone/arm:node-current node -v
+```
+##### npm
+```
+docker run -ti --rm --name Node izone/arm:node-lts npm -v
 ```
 
 -----
