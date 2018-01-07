@@ -424,6 +424,13 @@ izone/arm:node-lts /root/node_modules/nodemon/bin/nodemon.js app.js
 mkdir http-server
 cd http-server
 ```
+##### Run http-server
+```
+docker run -d --rm --name Http \
+-p 80:8080 \
+-v $PWD:/root \
+izone/arm:node-lts ash -c "npm i http-server -g && http-server /root"
+```
 ##### Copy the public dir
 ```
 docker run -ti --rm -v $PWD:/root \
