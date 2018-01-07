@@ -377,7 +377,7 @@ docker build -t izone/arm:php7 ./php7/
 docker pull izone/arm:node-current
 docker pull izone/arm:node-9.3
 ```
-##### Node LTS (8.9.3)
+##### Node LTS (8.9.4)
 ```
 docker pull izone/arm:node-lts
 docker pull izone/arm:node-8.9
@@ -690,7 +690,7 @@ docker build -t izone/arm:openjdk7 ./openjdk/openjdk7/
 docker build -t izone/arm:node-9.3 ./node/9.3/ && \
 docker build -t izone/arm:node-current ./node/9.3/
 ```
-##### Node 8.9.3 LTS
+##### Node 8.9.4 LTS
 ```
 docker build -t izone/arm:node-8.9 ./node/8.9/ && \
 docker build -t izone/arm:node-lts ./node/8.9/
