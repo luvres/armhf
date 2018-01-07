@@ -418,6 +418,21 @@ docker run -d --rm --name Node -h node \
 izone/arm:node-lts /root/node_modules/nodemon/bin/nodemon.js app.js
 ```
 
+#### Http Server
+##### Copy the public dir
+```
+docker run -ti --rm -v $PWD:/root \
+node:carbon-alpine \
+ash -c "npm i http-server -g && cp -a /usr/local/lib/node_modules/http-server/public /root"
+```
+##### Run http-server
+```
+docker run -d --rm --name Http \
+-p 8080:8080 \
+-v $PWD:/root \
+-w /root node:carbon-alpine ash -c "npm i http-server -g && http-server"
+```
+
 #### Version
 ##### Node
 ```
