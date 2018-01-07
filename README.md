@@ -441,6 +441,10 @@ docker run -d --rm --name Http \
 -v $PWD:/root \
 -w /root node:carbon-alpine ash -c "npm i http-server -g && http-server"
 ```
+##### Browser
+```
+http://localhost:8080/
+```
 
 #### Version
 ##### Node
