@@ -427,7 +427,7 @@ cd http-server
 ##### Copy the public dir
 ```
 docker run -ti --rm -v $PWD:/root \
-node:carbon-alpine \
+izone/arm:node-lts \
 ash -c "npm i http-server -g && cp -a /usr/local/lib/node_modules/http-server/public /root"
 ```
 ##### Permition
@@ -439,7 +439,7 @@ sudo chown -R $USER. public
 docker run -d --rm --name Http \
 -p 8080:8080 \
 -v $PWD:/root \
--w /root node:carbon-alpine ash -c "npm i http-server -g && http-server"
+-w /root izone/arm:node-lts ash -c "npm i http-server -g && http-server"
 ```
 ##### Browser
 ```
