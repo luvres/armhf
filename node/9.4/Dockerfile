@@ -2,7 +2,7 @@ FROM izone/arm
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 COPY qemu-arm-static /usr/bin/qemu-arm-static
 
-ENV NODE_VERSION 9.3.0
+ENV NODE_VERSION 9.4.0
 
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \

@@ -11,7 +11,7 @@
 
 #### MySQL (MariaDB)
 #### phpMyAdmin
-#### Postgres (9.6.1, 9.5.5, 9.4.10, 9.3.15, 9.2.19)
+#### Postgres (9.6.1, 9.5.5, 9.4.10, 9.4.15, 9.2.19)
 #### pgAdmin
 
 #### Lighttpd with PHP (5.6 and 7.0)
@@ -372,10 +372,10 @@ docker build -t izone/arm:php7 ./php7/
 ### Nodejs
 #### Pull image options
 
-##### Node Current (9.3.0)
+##### Node Current (9.4.0)
 ```
 docker pull izone/arm:node-current
-docker pull izone/arm:node-9.3
+docker pull izone/arm:node-9.4
 ```
 ##### Node LTS (8.9.4)
 ```
@@ -683,10 +683,10 @@ docker build -t izone/arm:postgres-9.5.6 ./postgres/9.5.6/
 docker build -t izone/arm:postgres-9.4 ./postgres/9.4.11/ && \
 docker build -t izone/arm:postgres-9.4.11 ./postgres/9.4.11/
 ```
-##### Postgres 9.3
+##### Postgres 9.4
 ```
-docker build -t izone/arm:postgres-9.3 ./postgres/9.3.16/ && \
-docker build -t izone/arm:postgres-9.3.16 ./postgres/9.3.16/
+docker build -t izone/arm:postgres-9.4 ./postgres/9.4.16/ && \
+docker build -t izone/arm:postgres-9.4.16 ./postgres/9.4.16/
 ```
 ##### Postgres 9.2
 ```
@@ -720,10 +720,10 @@ docker build -t izone/arm:openjdk7 ./openjdk/openjdk7/
 
 -----
 ### Nodejs
-##### Node 9.3.0 Current
+##### Node 9.4.0 Current
 ```
-docker build -t izone/arm:node-9.3 ./node/9.3/ && \
-docker build -t izone/arm:node-current ./node/9.3/
+docker build -t izone/arm:node-9.4 ./node/9.4/ && \
+docker build -t izone/arm:node-current ./node/9.4/
 ```
 ##### Node 8.9.4 LTS
 ```
