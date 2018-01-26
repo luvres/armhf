@@ -6,12 +6,12 @@
 ### Arch Linux
 
 #### Openjdk 8
-#### Tomcat 8.0.41
+#### Tomcat 8.0.49
 #### Windfly 10.1.0 Final
 
 #### MySQL (MariaDB)
 #### phpMyAdmin
-#### Postgres (9.6.1, 9.5.5, 9.4.10, 9.4.15, 9.2.19)
+#### Postgres (10.1, 9.6.6, 9.5.10, 9.4.15, 9.3.20)
 #### pgAdmin
 
 #### Lighttpd with PHP (5.6 and 7.0)
