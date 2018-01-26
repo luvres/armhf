@@ -1,5 +1,6 @@
 FROM izone/arm:openjdk
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
+COPY qemu-arm-static /usr/bin/qemu-arm-static
 
 ENV PASS=admin \
     WILDFLY_VERSION=8.2.1.Final
