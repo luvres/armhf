@@ -19,4 +19,4 @@ RUN { \
 	} > /usr/local/bin/docker-java-home \
 	&& chmod +x /usr/local/bin/docker-java-home \
     \
-    && apk add --no-cache openjdk${JAVA_VERSION_MINOR}-jre-base
+    && apk add --no-cache openjdk${JAVA_VERSION_MINOR}-jre-base curl
