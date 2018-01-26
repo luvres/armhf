@@ -123,7 +123,7 @@ cd arm
 docker build -t izone/arm:openjdk ./openjdk/
 ```
 
-### Tomcat 8.0.41
+### Tomcat 8.0.49
 ##### Pull image
 ```
 docker pull izone/arm:tomcat
@@ -223,17 +223,17 @@ cd arm
 docker build -t izone/arm:mariadb ./mariadb/
 ```
 
-### Postgres latest (9.6.1)
+### Postgres latest (10.1)
 ##### Pull image
 ```
 docker pull izone/arm:postgres
+docker pull izone/arm:postgres-10
+docker pull izone/arm:postgres-10.1
+```
+##### Pull image 9.6.6
+```
 docker pull izone/arm:postgres-9.6
-docker pull izone/arm:postgres-9.6.1
-```
-##### Pull image 9.5.5
-```
-docker pull izone/arm:postgres-9.5
-docker pull izone/arm:postgres-9.5.5
+docker pull izone/arm:postgres-9.6.6
 ```
 ##### Run pulled image
 ```
