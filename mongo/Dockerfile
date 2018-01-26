@@ -1,4 +1,4 @@
-FROM arm32v7/debian:jessie-slim
+FROM arm32v7/debian:buster-slim
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 COPY qemu-arm-static /usr/bin/qemu-arm-static
 
