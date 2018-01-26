@@ -1,4 +1,4 @@
-FROM izone/arm
+FROM izone/arm:alpine-3.6
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 COPY qemu-arm-static /usr/bin/qemu-arm-static
 
@@ -22,9 +22,9 @@ ENV LANG en_US.utf8
 
 RUN mkdir /docker-entrypoint-initdb.d
 
-ENV PG_MAJOR 9.6
-ENV PG_VERSION 9.6.6
-ENV PG_SHA256 399cdffcb872f785ba67e25d275463d74521566318cfef8fe219050d063c8154
+ENV PG_MAJOR 10
+ENV PG_VERSION 10.1
+ENV PG_SHA256 3ccb4e25fe7a7ea6308dea103cac202963e6b746697366d72ec2900449a5e713
 
 RUN set -ex \
 	\
@@ -58,7 +58,7 @@ RUN set -ex \
 #		openldap-dev \
 		openssl-dev \
 # configure: error: prove not found
-		perl \
+		perl-utils \
 # configure: error: Perl module IPC::Run is required to run TAP tests
 		perl-ipc-run \
 #		perl-dev \

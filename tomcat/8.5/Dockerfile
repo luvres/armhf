@@ -5,7 +5,7 @@ COPY qemu-arm-static /usr/bin/qemu-arm-static
 ENV CATALINA_HOME=/usr/local/tomcat \
     PATH=$CATALINA_HOME/bin:$PATH \
     TOMCAT_MAJOR=8 \
-    TOMCAT_VERSION=8.0.49
+    TOMCAT_VERSION=8.5.27
 ENV TOMCAT_TGZ_URL=http://ftp.unicamp.br/pub/apache/tomcat/tomcat-8/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.zip
 
 RUN apk add --no-cache wget \

@@ -1,9 +1,18 @@
-FROM izone/arm
+FROM izone/arm:alpine-3.5
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
+COPY qemu-arm-static /usr/bin/qemu-arm-static
 
 # alpine includes "postgres" user/group in base install
-# /etc/passwd:22:postgres:x:70:70::/var/lib/postgresql:/bin/sh
-# /etc/group:34:postgres:x:70:
+#   /etc/passwd:22:postgres:x:70:70::/var/lib/postgresql:/bin/sh
+#   /etc/group:34:postgres:x:70:
+# the home directory for the postgres user, however, is not created by default
+# see https://github.com/docker-library/postgres/issues/274
+RUN set -ex; \
+	postgresHome="$(getent passwd postgres)"; \
+	postgresHome="$(echo "$postgresHome" | cut -d: -f6)"; \
+	[ "$postgresHome" = '/var/lib/postgresql' ]; \
+	mkdir -p "$postgresHome"; \
+	chown -R postgres:postgres "$postgresHome"
 
 # su-exec (gosu-compatible) is installed further down
 
@@ -14,8 +23,8 @@ ENV LANG en_US.utf8
 RUN mkdir /docker-entrypoint-initdb.d
 
 ENV PG_MAJOR 9.5
-ENV PG_VERSION 9.5.6
-ENV PG_SHA256 bb9e5f6d34e20783e96e10c1d6c0c09c31749e802aaa46b793ce2522725ae12f
+ENV PG_VERSION 9.5.10
+ENV PG_SHA256 945d7ade094dded6b95495d8f1561a12ac9608276858ed30adf3c3658275f281
 
 RUN set -ex \
 	\
@@ -36,6 +45,8 @@ RUN set -ex \
 	\
 	&& apk add --no-cache --virtual .build-deps \
 		bison \
+		coreutils \
+		dpkg-dev dpkg \
 		flex \
 		gcc \
 #		krb5-dev \
@@ -46,7 +57,10 @@ RUN set -ex \
 		make \
 #		openldap-dev \
 		openssl-dev \
+# configure: error: prove not found
 		perl \
+# configure: error: Perl module IPC::Run is required to run TAP tests
+		perl-ipc-run \
 #		perl-dev \
 #		python-dev \
 #		python3-dev \
@@ -60,9 +74,14 @@ RUN set -ex \
 	&& awk '$1 == "#define" && $2 == "DEFAULT_PGSOCKET_DIR" && $3 == "\"/tmp\"" { $3 = "\"/var/run/postgresql\""; print; next } { print }' src/include/pg_config_manual.h > src/include/pg_config_manual.h.new \
 	&& grep '/var/run/postgresql' src/include/pg_config_manual.h.new \
 	&& mv src/include/pg_config_manual.h.new src/include/pg_config_manual.h \
+	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" \
+# explicitly update autoconf config.guess and config.sub so they support more arches/libcs
+	&& wget -O config/config.guess 'https://git.savannah.gnu.org/cgit/config.git/plain/config.guess?id=7d3d27baf8107b630586c962c057e22149653deb' \
+	&& wget -O config/config.sub 'https://git.savannah.gnu.org/cgit/config.git/plain/config.sub?id=7d3d27baf8107b630586c962c057e22149653deb' \
 # configure options taken from:
 # https://anonscm.debian.org/cgit/pkg-postgresql/postgresql.git/tree/debian/rules?h=9.5
 	&& ./configure \
+		--build="$gnuArch" \
 # "/usr/src/postgresql/src/backend/access/common/tupconvert.c:105: undefined reference to `libintl_gettext'"
 #		--enable-nls \
 		--enable-integer-datetimes \
@@ -76,6 +95,8 @@ RUN set -ex \
 		--with-pgport=5432 \
 		--with-system-tzdata=/usr/share/zoneinfo \
 		--prefix=/usr/local \
+		--with-includes=/usr/local/include \
+		--with-libraries=/usr/local/lib \
 		\
 # these make our image abnormally large (at least 100MB larger), which seems uncouth for an "Alpine" (ie, "small") variant :)
 #		--with-krb5 \
@@ -88,16 +109,15 @@ RUN set -ex \
 		--with-openssl \
 		--with-libxml \
 		--with-libxslt \
-	&& make -j "$(getconf _NPROCESSORS_ONLN)" world \
+	&& make -j "$(nproc)" world \
 	&& make install-world \
 	&& make -C contrib install \
 	\
 	&& runDeps="$( \
-		scanelf --needed --nobanner --recursive /usr/local \
-			| awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
+		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local \
+			| tr ',' '\n' \
 			| sort -u \
-			| xargs -r apk info --installed \
-			| sort -u \
+			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
 	)" \
 	&& apk add --no-cache --virtual .postgresql-rundeps \
 		$runDeps \
@@ -110,7 +130,6 @@ RUN set -ex \
 	&& cd / \
 	&& rm -rf \
 		/usr/src/postgresql \
-		/usr/local/include/* \
 		/usr/local/share/doc \
 		/usr/local/share/man \
 	&& find /usr/local -name '*.a' -delete
@@ -118,17 +137,15 @@ RUN set -ex \
 # make the sample config easier to munge (and "correct by default")
 RUN sed -ri "s!^#?(listen_addresses)\s*=\s*\S+.*!\1 = '*'!" /usr/local/share/postgresql/postgresql.conf.sample
 
-RUN mkdir -p /var/run/postgresql && chown -R postgres:postgres /var/run/postgresql && chmod g+s /var/run/postgresql
+RUN mkdir -p /var/run/postgresql && chown -R postgres:postgres /var/run/postgresql && chmod 2777 /var/run/postgresql
 
-ENV PATH /usr/lib/postgresql/$PG_MAJOR/bin:$PATH
 ENV PGDATA /var/lib/postgresql/data
 RUN mkdir -p "$PGDATA" && chown -R postgres:postgres "$PGDATA" && chmod 777 "$PGDATA" # this 777 will be replaced by 700 at runtime (allows semi-arbitrary "--user" values)
-
 VOLUME /var/lib/postgresql/data
 
-COPY docker-entrypoint.sh /
-
-ENTRYPOINT ["/docker-entrypoint.sh"]
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 5432
 CMD ["postgres"]

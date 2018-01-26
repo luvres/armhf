@@ -643,7 +643,9 @@ sudo ./mkimage-arch.sh
 ### AUTO CONSTRUCTION creation sequences
 #### Base (Alpine)
 ```
-docker build -t izone/arm .
+docker build -t izone/arm:alpine-3.7 ./alpine/3.7/
+docker build -t izone/arm:alpine-3.6 ./alpine/3.6/
+docker build -t izone/arm:alpine-3.5 ./alpine/3.5/
 ```
 #### Base (Debian)
 ```
@@ -667,31 +669,31 @@ docker build -t izone/arm:mariadb ./mariadb/ && \
 docekr build -t izone/arm:phpmyadmin ./phpmyadmin/
 ```
 
-##### Postgres 9.6.2 (Latest)
+##### Postgres 10.1 (Latest)
 ```
 docker build -t izone/arm:postgres ./postgres/ && \
-docker build -t izone/arm:postgres-9.6 ./postgres/ && \
-docker build -t izone/arm:postgres-9.6.2 ./postgres/
+docker build -t izone/arm:postgres-10 ./postgres/ && \
+docker build -t izone/arm:postgres-10.1 ./postgres/
 ```
-##### Postgres 9.5
+##### Postgres 9.6.6
 ```
-docker build -t izone/arm:postgres-9.5 ./postgres/9.5.6/ && \
-docker build -t izone/arm:postgres-9.5.6 ./postgres/9.5.6/
+docker build -t izone/arm:postgres-9.6 ./postgres/9.6.6/ && \
+docker build -t izone/arm:postgres-9.6.6 ./postgres/9.6.6/
 ```
-##### Postgres 9.4
+##### Postgres 9.5.10
 ```
-docker build -t izone/arm:postgres-9.4 ./postgres/9.4.11/ && \
-docker build -t izone/arm:postgres-9.4.11 ./postgres/9.4.11/
+docker build -t izone/arm:postgres-9.5 ./postgres/9.5.10/ && \
+docker build -t izone/arm:postgres-9.5.10 ./postgres/9.5.10/
 ```
-##### Postgres 9.4
+##### Postgres 9.4.15
 ```
-docker build -t izone/arm:postgres-9.4 ./postgres/9.4.16/ && \
-docker build -t izone/arm:postgres-9.4.16 ./postgres/9.4.16/
+docker build -t izone/arm:postgres-9.4 ./postgres/9.4.15/ && \
+docker build -t izone/arm:postgres-9.4.15 ./postgres/9.4.15/
 ```
-##### Postgres 9.2
+##### Postgres 9.3.20
 ```
-docker build -t izone/arm:postgres-9.2 ./postgres/9.2.20/ && \
-docker build -t izone/arm:postgres-9.2.20 ./postgres/9.2.20/
+docker build -t izone/arm:postgres-9.3 ./postgres/9.3.20/ && \
+docker build -t izone/arm:postgres-9.3.20 ./postgres/9.3.20/
 ```
 
 ##### PgAdmin
@@ -707,15 +709,26 @@ docker build -t izone/arm:php7 ./php7/
 
 docker build -t izone/arm:owncloud ./owncloud/
 ```
-#### Web Servers Java
+### Web Servers Java
+##### OpenJDK
 ```
-docker build -t izone/arm:openjdk ./openjdk/ && \
+docker build -t izone/arm:openjdk ./openjdk/
+``` 
+##### Tomcat
+```
 docker build -t izone/arm:tomcat ./tomcat/ && \
+docker build -t izone/arm:tomcat-8.0 ./tomcat/
+```
+```
+docker build -t izone/arm:tomcat-8.5 ./tomcat/8.5/ && \
+docker build -t izone/arm:tomcat-8.5.27 ./tomcat/8.5/
+```
+##### Wildfly
 docker build -t izone/arm:wildfly ./wildfly/
 
 docker build -t izone/arm:wildfly8 ./wildfly/8.2.1.Final/
 
-docker build -t izone/arm:openjdk7 ./openjdk/openjdk7/
+
 ```
 
 -----

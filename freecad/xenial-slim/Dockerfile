@@ -1,4 +1,4 @@
-FROM arm32v7/debian:jessie-slim
+FROM izone/arm32v7:xenial-slim
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
 # sudo apt-get install qemu-user-static binfmt-support
@@ -14,6 +14,7 @@ COPY qemu-arm-static /usr/bin/qemu-arm-static
 # https://aur.archlinux.org/packages
 # http://www.boost.org/doc/libs/1_64_0/more/getting_started/unix-variants.html
 # https://matchboxdorry.gitbooks.io/matchboxblog/content/blogs/build_and_run_arm_images.html
+
 
 ENV FREECAD=/opt/FreeCAD
 RUN \
@@ -38,13 +39,13 @@ RUN \
 		swig " \
   \
 	&& libBoost_dev=" \
-		libboost-filesystem1.55-dev \
-		libboost-program-options1.55-dev \
-		libboost-python1.55-dev \
-		libboost-regex1.55-dev \
-		libboost-signals1.55-dev \
-		libboost-system1.55-dev \
-		libboost-thread1.55-dev " \
+		libboost-filesystem1.58-dev \
+		libboost-program-options1.58-dev \
+		libboost-python1.58-dev \
+		libboost-regex1.58-dev \
+		libboost-signals1.58-dev \
+		libboost-system1.58-dev \
+		libboost-thread1.58-dev " \
   \
 	&& pack_tools=" \
 		automake \
@@ -74,9 +75,6 @@ RUN \
 		gfortran \
 		cpio " \
   \
-  # Enable backports (cmake 3.6.2) "cmake 3.3 or higher" required by VTK 8
-	&& echo 'deb http://deb.debian.org/debian jessie-backports main' \
-									>/etc/apt/sources.list.d/backports.list \
 	&& apt-get update \
 	&& apt-get install -y \
 		$pack_dev \
@@ -85,9 +83,7 @@ RUN \
 		$pack_netgen \
 		$pack_occt \
 		$pack_calculix \
-  \
-  # cmake 3.6.2
-	&& apt-get -t jessie-backports install -y cmake \
+		cmake \
   \
   ### libMED 3.2.0
   #----------------
@@ -188,10 +184,10 @@ RUN \
   # Clean
 	&& cd && rm $MAKEDIR -fR \
   \
-  ### VTK 8.1.0
+  ### VTK 8.0.1
   #-------------
-	&& vtk_VERSION_MAJOR=8.1 \
-	&& vtk_VERSION_MINOR=8.1.0 \
+	&& vtk_VERSION_MAJOR=8.0 \
+	&& vtk_VERSION_MINOR=8.0.1 \
   \
 	&& MAKEDIR=vtk \
 	&& cd \
@@ -251,14 +247,13 @@ RUN \
 	  # 128M
 		$FREECAD/share/doc/* \
   \
-  ### Calculix 2.13 and CGX
+  ### Calculix 2.12 and CGX
   #-------------------------
-	&& ccx_VERSION=2.13 \
+	&& ccx_VERSION=2.12 \
   \
 	&& cd \
 	&& git clone https://github.com/luvres/calculix.git \
 	&& cd calculix/ \
-	&& sed -i 's/ -m64 $(OPTIONS)//' CalculiX/ccx_2.13/src/Makefile \
 	&& ./install \
 	&& cp $HOME/CalculiX-${ccx_VERSION}/bin/ccx_${ccx_VERSION} /usr/bin/ccx \
 	&& cp $HOME/CalculiX-${ccx_VERSION}/bin/cgx /usr/bin/cgx \
@@ -269,7 +264,7 @@ RUN \
 	&& strip \
 		$FREECAD/lib/*.? \
 		$FREECAD/lib/*.so \
-		/usr/bin/ccx /usr/bin/cgx \
+#		/usr/bin/ccx /usr/bin/cgx \
   \
 	&& apt-get remove -y \
 		$libBoost_dev \
@@ -285,26 +280,27 @@ RUN \
 	  \
 		libfreeimage3 \
 		libtbb2 \
-		libhdf5-8 \
+		libhdf5-10 \
 		libfreetype6 \
 		openssh-client \
-	  # libBoost-1.55
-		libboost-atomic1.55.0 \
-		libboost-chrono1.55.0 \
-		libboost-filesystem1.55.0 \
-		libboost-program-options1.55.0 \
-		libboost-python1.55.0 \
-		libboost-regex1.55.0 \
-		libboost-signals1.55.0 \
-		libboost-system1.55.0 \
-		libboost-thread1.55.0 \
-		libboost-date-time1.55.0 \
-		libboost-serialization1.55.0 \
+	  # libBoost-1.58
+		libboost-atomic1.58.0 \
+		libboost-chrono1.58.0 \
+		libboost-filesystem1.58.0 \
+		libboost-program-options1.58.0 \
+		libboost-python1.58.0 \
+		libboost-regex1.58.0 \
+		libboost-signals1.58.0 \
+		libboost-system1.58.0 \
+		libboost-thread1.58.0 \
+		libboost-date-time1.58.0 \
+		libboost-serialization1.58.0 \
 	  # libhdf5-dev
-		libhdf5-cpp-8 libjpeg-dev libjpeg62-turbo-dev zlib1g-dev \
+		libhdf5-cpp-11 libjpeg-dev libjpeg-turbo8-dev zlib1g-dev \
   \
-  # gmsh 2.11.0
-	&& apt-get -t jessie-backports install -y gmsh \
+  # gmsh 2.10.1
+	&& apt-get install -y gmsh \
+  \
 	&& rm /usr/share/doc/* -fR
 
 WORKDIR /root
