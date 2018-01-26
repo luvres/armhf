@@ -3,7 +3,7 @@ MAINTAINER Leonardo Loures <luvres@hotmail.com>
 COPY qemu-arm-static /usr/bin/qemu-arm-static
 
 ENV PASS=admin \
-    WILDFLY_VERSION=11.0.0.Final \
+    WILDFLY_VERSION=10.1.0.Final \
     LAUNCH_JBOSS_IN_BACKGROUND=true
 
 RUN apk add --no-cache curl \

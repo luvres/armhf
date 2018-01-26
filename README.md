@@ -677,6 +677,7 @@ docker build -t izone/arm:postgres-10.1 ./postgres/
 ```
 ##### Postgres 9.6.6
 ```
+docker build -t izone/arm:postgres-9 ./postgres/9.6.6/ && \
 docker build -t izone/arm:postgres-9.6 ./postgres/9.6.6/ && \
 docker build -t izone/arm:postgres-9.6.6 ./postgres/9.6.6/
 ```
@@ -725,6 +726,8 @@ docker build -t izone/arm:tomcat-8.5.27 ./tomcat/8.5/
 ```
 ##### Wildfly
 docker build -t izone/arm:wildfly ./wildfly/
+
+docker build -t izone/arm:wildfly10 ./wildfly/10.1.0.Final/
 
 docker build -t izone/arm:wildfly8 ./wildfly/8.2.1.Final/
 
