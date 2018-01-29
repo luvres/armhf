@@ -745,6 +745,16 @@ docker build -t izone/arm:node-current ./node/9.4/
 docker build -t izone/arm:node-8.9 ./node/8.9/ && \
 docker build -t izone/arm:node-lts ./node/8.9/
 ```
+##### Node 6.12.3
+```
+docker build -t izone/arm:node-6 ./node/6.12/ && \
+docker build -t izone/arm:node-6.12.3 ./node/6.12/
+```
+##### Node 4.8.7
+```
+docker build -t izone/arm:node-4 ./node/4.8/ && \
+docker build -t izone/arm:node-4.8.7 ./node/4.8/
+```
 
 -----
 ### MongoDB
