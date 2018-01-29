@@ -725,13 +725,12 @@ docker build -t izone/arm:tomcat-8.5 ./tomcat/8.5/ && \
 docker build -t izone/arm:tomcat-8.5.27 ./tomcat/8.5/
 ```
 ##### Wildfly
+```
 docker build -t izone/arm:wildfly ./wildfly/
 
 docker build -t izone/arm:wildfly10 ./wildfly/10.1.0.Final/
 
 docker build -t izone/arm:wildfly8 ./wildfly/8.2.1.Final/
-
-
 ```
 
 -----
