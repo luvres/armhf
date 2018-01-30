@@ -737,12 +737,14 @@ docker build -t izone/arm:wildfly8 ./wildfly/8.2.1.Final/
 ### Nodejs
 ##### Node 9.4.0 Current
 ```
-docker build -t izone/arm:node-9.4 ./node/9.4/ && \
+docker build -t izone/arm:node-9 ./node/9.4/ && \
+docker build -t izone/arm:node-9.4.0 ./node/9.4/ && \
 docker build -t izone/arm:node-current ./node/9.4/
 ```
 ##### Node 8.9.4 LTS
 ```
-docker build -t izone/arm:node-8.9 ./node/8.9/ && \
+docker build -t izone/arm:node-8 ./node/8.9/ && \
+docker build -t izone/arm:node-8.9.4 ./node/8.9/ && \
 docker build -t izone/arm:node-lts ./node/8.9/
 ```
 ##### Node 6.12.3

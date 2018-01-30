@@ -1,4 +1,4 @@
-FROM izone/arm:alpine-3.7
+FROM izone/arm:alpine-3.6
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 COPY qemu-arm-static /usr/bin/qemu-arm-static
 
